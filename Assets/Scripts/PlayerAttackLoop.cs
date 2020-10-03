@@ -12,12 +12,17 @@ public class PlayerAttackLoop : MonoBehaviour
 
     public Text ElapsedMsText;
     public Text ActionText;
+    public CharacterController2D controller;
+    public float runSpeed = 40f;
 
+    float horizontalMove = 0f;
+    bool jump = false;
+    bool crouch = false;
     float _elapsedMs;
-    List<PlayerAction> _playerActions = new List<PlayerAction>();
-    float _totalActionTime = 20f;
-    //PlayerAction[] _actionQueue;
-    bool _actionsComplete;
+    List<PlayerAction> _allPlayerActions = new List<PlayerAction>();
+    List<PlayerAction> _remainingActionsInCurrentLoop = new List<PlayerAction>();
+    float _totalActionTime = 5f;
+    bool _actionRecordingComplete;
     bool _actionsActive;
 
     private void Start()
@@ -28,13 +33,13 @@ public class PlayerAttackLoop : MonoBehaviour
 
     private void Update()
     {
-        _elapsedMs = Time.time;
+        _elapsedMs += Time.deltaTime;
         ElapsedMsText.text = $"Elapsed: {_elapsedMs.ToString()}";
 
         // During update, can't Slash, Stab, Dash or Jump using Input controls
         // Can only move left and right
 
-        if (Input.GetKeyDown(KeyCode.Backspace) && !_isInitializingActions && !_playerActions.Any())
+        if (Input.GetKeyDown(KeyCode.Backspace) && !_isInitializingActions && !_allPlayerActions.Any())
         {
             _isInitializingActions = true;
         }
@@ -43,43 +48,107 @@ public class PlayerAttackLoop : MonoBehaviour
         {
             AddPlayerActions();
         }
-        else if (_actionsComplete && _actionsActive)
+        else if (_actionRecordingComplete && _actionsActive)
         {
             ReplayPlayerActions();
         }
-        else
-        {
-            ReadNormalPlayerInput();
-        }
-    }
 
-    private void ReplayPlayerActions()
-    {
-        Debug.Log("Replay player actions");
-
-        // loop through player actions
+        ReadNormalPlayerInput();
     }
 
     private void ReadNormalPlayerInput()
     {
         Debug.Log("Normal player input");
+
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+        if (!_actionsActive && Input.GetButtonDown("Jump"))
+        {
+            jump = true;
+        }
+
+        if (Input.GetButtonDown("Crouch"))
+        {
+            crouch = true;
+        }
+        else if (Input.GetButtonUp("Crouch"))
+        {
+            crouch = false;
+        }
+    }
+
+    // Update is called once per frame
+    void ReplayPlayerActions()
+    {
+        Debug.Log("Replay player actions");
+
+        //ActionText.text += $"Currently {_remainingActionsInCurrentLoop.Count}{nameof(_remainingActionsInCurrentLoop)}";
+
+        // loop through player actions
+        PlayerAction currentAction = _remainingActionsInCurrentLoop.FirstOrDefault();
+
+        if (currentAction == null)
+        {
+            ResetPlayerActionLoop();
+            ActionText.text += "No more actions, resetting loop";
+            return;
+        }
+
+        if (_elapsedMs < currentAction.TimeActionPerformed)
+            return;
+
+        switch (currentAction.PlayerActionType)
+        {
+            case PlayerActionTypeEnum.Jump:
+                jump = true;
+                break;
+            default:
+                Debug.LogWarning($"{currentAction.PlayerActionType} replayed at {currentAction.TimeActionPerformed}");
+                break;
+            //case PlayerActionTypeEnum.Dash:
+            //    break;
+            //case PlayerActionTypeEnum.Slash:
+            //    break;
+            //case PlayerActionTypeEnum.Stab:
+            //    break;
+        }
+
+        _remainingActionsInCurrentLoop.Remove(currentAction);
+
+        //ActionText.text += $"Currently {_remainingActionsInCurrentLoop}{nameof(_remainingActionsInCurrentLoop)}";
+    }
+
+    private void ResetPlayerActionLoop()
+    {
+        _elapsedMs = 0f;
+        ElapsedMsText.text = $"Elapsed: {_elapsedMs.ToString()}";
+        ActionText.text = $"ACTIONS: {_allPlayerActions.Count()}{Environment.NewLine}REPLAYING:{Environment.NewLine}";
+        _remainingActionsInCurrentLoop = new List<PlayerAction>(_allPlayerActions);
+
+    }
+
+    void FixedUpdate()
+    {
+        // Move our character
+        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        jump = false;
     }
 
     private void AddPlayerActions()
     {
         if (_elapsedMs >= _totalActionTime)
         {
-            _elapsedMs = 0f;
-            ElapsedMsText.text = $"Elapsed: {_elapsedMs.ToString()}";
-            ActionText.text = $"ACTIONS: {_playerActions.Count()}{Environment.NewLine}";
+            ResetPlayerActionLoop();
             _isInitializingActions = false;
+            _actionRecordingComplete = true;
+            _actionsActive = true;
             return;
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             var slash = new PlayerAction { PlayerActionType = PlayerActionTypeEnum.Slash, TimeActionPerformed = _elapsedMs };
-            _playerActions.Add(slash);
+            _allPlayerActions.Add(slash);
 
             ActionText.text += $"{slash.PlayerActionType.ToString()}: {slash.TimeActionPerformed}{Environment.NewLine}";
         }
@@ -87,7 +156,7 @@ public class PlayerAttackLoop : MonoBehaviour
         if (Input.GetMouseButtonUp(1))
         {
             var stab = new PlayerAction { PlayerActionType = PlayerActionTypeEnum.Stab, TimeActionPerformed = _elapsedMs };
-            _playerActions.Add(stab);
+            _allPlayerActions.Add(stab);
 
             ActionText.text += $"{stab.PlayerActionType.ToString()}: {stab.TimeActionPerformed}{Environment.NewLine}";
         }
@@ -95,7 +164,7 @@ public class PlayerAttackLoop : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             var dash = new PlayerAction { PlayerActionType = PlayerActionTypeEnum.Dash, TimeActionPerformed = _elapsedMs };
-            _playerActions.Add(dash);
+            _allPlayerActions.Add(dash);
 
             ActionText.text += $"{dash.PlayerActionType.ToString()}: {dash.TimeActionPerformed}{Environment.NewLine}";
         }
@@ -103,7 +172,7 @@ public class PlayerAttackLoop : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             var jump = new PlayerAction { PlayerActionType = PlayerActionTypeEnum.Jump, TimeActionPerformed = _elapsedMs };
-            _playerActions.Add(jump);
+            _allPlayerActions.Add(jump);
 
             ActionText.text += $"{jump.PlayerActionType.ToString()}: {jump.TimeActionPerformed}{Environment.NewLine}";
         }

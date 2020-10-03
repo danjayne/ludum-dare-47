@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 5934389025166143745}
   - component: {fileID: 5934389025166143744}
   - component: {fileID: 5934389025166143751}
+  - component: {fileID: 1149414657}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -181,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e30e9af13d50e40a74b33c44b99ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 400
+  m_JumpForce: 800
   m_CrouchSpeed: 0.091
   m_MovementSmoothing: 0.0185
   m_AirControl: 1
@@ -190,7 +191,7 @@ MonoBehaviour:
     m_Bits: 55
   m_GroundCheck: {fileID: 5934389025073635672}
   m_CeilingCheck: {fileID: 5934389024704092134}
-  m_CrouchDisableCollider: {fileID: 0}
+  m_CrouchDisableCollider: {fileID: 5934389025166143745}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -210,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 5934389025166143747}
-  runSpeed: 200
+  runSpeed: 400
 --- !u!61 &5934389025166143745
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -220,7 +221,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 5934389025166143748}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 72185265e8177ae4682dfda1abaeb288, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -246,7 +247,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 5934389025166143748}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 72185265e8177ae4682dfda1abaeb288, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -268,9 +269,23 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 6200000, guid: 72185265e8177ae4682dfda1abaeb288, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1149414657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934389025166143748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a065c0bcce6246546a4d28e25b47b0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ElapsedMsText: {fileID: 0}
+  ActionText: {fileID: 0}
