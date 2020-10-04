@@ -58,7 +58,7 @@ public class PlayerAttackLoop : MonoBehaviour
 
     private void ReadNormalPlayerInput()
     {
-        Debug.Log("Normal player input");
+        //Debug.Log("Normal player input");
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
@@ -80,7 +80,7 @@ public class PlayerAttackLoop : MonoBehaviour
     // Update is called once per frame
     void ReplayPlayerActions()
     {
-        Debug.Log("Replay player actions");
+        //Debug.Log("Replay player actions");
 
         //ActionText.text += $"Currently {_remainingActionsInCurrentLoop.Count}{nameof(_remainingActionsInCurrentLoop)}";
 
@@ -103,7 +103,7 @@ public class PlayerAttackLoop : MonoBehaviour
                 jump = true;
                 break;
             default:
-                Debug.LogWarning($"{currentAction.PlayerActionType} replayed at {currentAction.TimeActionPerformed}");
+                //Debug.LogWarning($"{currentAction.PlayerActionType} replayed at {currentAction.TimeActionPerformed}");
                 break;
             //case PlayerActionTypeEnum.Dash:
             //    break;
