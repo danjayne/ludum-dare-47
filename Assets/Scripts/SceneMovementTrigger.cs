@@ -16,7 +16,7 @@ public class SceneMovementTrigger : MonoBehaviour
         int.TryParse(sceneNumStr, out int sceneNum);
 
         _leftScene = GetSceneByIndex(sceneNum);
-        _rightScene = GetSceneByIndex(sceneNum+1);
+        _rightScene = GetSceneByIndex(sceneNum + 1);
     }
 
     private Transform GetSceneByIndex(int sceneNum)
@@ -37,10 +37,12 @@ public class SceneMovementTrigger : MonoBehaviour
             _vCam.Follow = _leftScene;
         }
 
-        SpriteRenderer sr = _vCam.Follow.Find("Cloud-Background").GetComponent<SpriteRenderer>();
-        _vCam.m_Lens.OrthographicSize = (sr.bounds.size.x * Screen.height) / Screen.width * 0.5f;
+        SpriteRenderer sr;
+        if (!_vCam.Follow.TryGetComponent<SpriteRenderer>(out sr))
+        {
+            _vCam.Follow.Find("Cloud-Background").TryGetComponent<SpriteRenderer>(out sr);
+        }
 
-        // (width of follow x scene height) / screen.width
-        // / 2
+        _vCam.m_Lens.OrthographicSize = (sr.bounds.size.x * Screen.height) / Screen.width * 0.5f;
     }
 }

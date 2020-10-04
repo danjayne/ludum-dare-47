@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3209753137015575563}
   - component: {fileID: 3209753137015575560}
   - component: {fileID: 3209753137015575561}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: RIPStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

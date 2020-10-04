@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1472056881}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5934389024704092134}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5934389024704092133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.068, y: 0.837, z: 0}
+  m_LocalPosition: {x: -0.068, y: 0.829, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5934389025166143750}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5934389025073635672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -84,7 +84,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5934389025073635679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.087, y: 0.054, z: 0}
+  m_LocalPosition: {x: -0.087, y: 0.077, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5934389025166143750}
@@ -101,12 +101,13 @@ GameObject:
   - component: {fileID: 5934389025166143750}
   - component: {fileID: 5934389025166143749}
   - component: {fileID: 5934389025166143756}
-  - component: {fileID: 5934389025166143747}
   - component: {fileID: 5934389025166143745}
   - component: {fileID: 5934389025166143744}
   - component: {fileID: 5934389025166143751}
+  - component: {fileID: 5934389025166143747}
   - component: {fileID: 1149414657}
-  m_Layer: 0
+  - component: {fileID: 1290067147}
+  m_Layer: 8
   m_Name: Knight
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -122,7 +123,7 @@ Transform:
   m_GameObject: {fileID: 5934389025166143748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.28, y: -2.92, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 5934389025073635672}
   - {fileID: 5934389024704092134}
@@ -200,6 +201,69 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &5934389025166143745
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934389025166143748}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 72185265e8177ae4682dfda1abaeb288, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07904768, y: 0.5985506}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4170041, y: 0.8062173}
+  m_EdgeRadius: 0
+--- !u!58 &5934389025166143744
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934389025166143748}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 72185265e8177ae4682dfda1abaeb288, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.09, y: 0.2316635}
+  serializedVersion: 2
+  m_Radius: 0.19261232
+--- !u!50 &5934389025166143751
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934389025166143748}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 4
+  m_Material: {fileID: 6200000, guid: 72185265e8177ae4682dfda1abaeb288, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &5934389025166143747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +282,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 4151
+    m_Bits: 20481
   m_GroundCheck: {fileID: 5934389025073635672}
   m_CeilingCheck: {fileID: 5934389024704092134}
   m_CrouchDisableCollider: {fileID: 5934389025166143745}
@@ -254,70 +318,19 @@ MonoBehaviour:
         m_CallState: 2
   OnDashEvent:
     m_PersistentCalls:
-      m_Calls: []
---- !u!61 &5934389025166143745
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5934389025166143748}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 72185265e8177ae4682dfda1abaeb288, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.07995033, y: 0.6590279}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.36826134, y: 0.47223842}
-  m_EdgeRadius: 0
---- !u!58 &5934389025166143744
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5934389025166143748}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 72185265e8177ae4682dfda1abaeb288, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.09, y: 0.21}
-  serializedVersion: 2
-  m_Radius: 0.21427584
---- !u!50 &5934389025166143751
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5934389025166143748}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 4
-  m_Material: {fileID: 6200000, guid: 72185265e8177ae4682dfda1abaeb288, type: 2}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
+      m_Calls:
+      - m_Target: {fileID: 1149414657}
+        m_TargetAssemblyTypeName: PlayerAttackLoop, Assembly-CSharp
+        m_MethodName: OnDashing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1149414657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,11 +343,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a065c0bcce6246546a4d28e25b47b0d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsInitializingActions: 0
+  _totalActionTime: 10
+  ElapsedMs: 0
+  _actionRecordingComplete: 0
+  _actionsActive: 0
   ElapsedMsText: {fileID: 0}
   ActionText: {fileID: 0}
   CController: {fileID: 5934389025166143747}
   Animator: {fileID: 5934389025166143756}
-  RunSpeed: 70
+  RunSpeed: 60
   SlashDamage: 20
   StabDamage: 40
   AttackPoint: {fileID: 1472056881}
@@ -342,3 +360,21 @@ MonoBehaviour:
   EnemyLayers:
     serializedVersion: 2
     m_Bits: 9728
+--- !u!114 &1290067147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934389025166143748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd1e857d08ccbd74f8b84bbb34cafd43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  HealthBar: {fileID: 0}
+  HurtBy:
+    serializedVersion: 2
+    m_Bits: 16384
+  HurtByCollisionDamage: 10

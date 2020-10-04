@@ -143,7 +143,7 @@ public class CharacterController2D : MonoBehaviour
             m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
         }
 
-        if (!m_Grounded && _isJumping && dash)
+        if (dash)
         {
             m_Grounded = false;
             var dashForce = m_JumpForce * _DashMultiplier;

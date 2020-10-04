@@ -9,16 +9,22 @@ using UnityEngineInternal;
 
 public class PlayerAttackLoop : MonoBehaviour
 {
-    static bool _isInitializingActions;
-
+    public bool IsInitializingActions;
+    public float _totalActionTime = 10f;
+    public float ElapsedMs;
+    public List<PlayerAction> _allPlayerActions = new List<PlayerAction>();
+    public List<PlayerAction> _remainingActionsInCurrentLoop = new List<PlayerAction>();
+    public bool _actionRecordingComplete;
+    public bool _actionsActive;
     public Text ElapsedMsText;
     public Text ActionText;
+    public CountdownBar CountdownBar;
+
     public CharacterController2D CController;
     public Animator Animator;
     public float RunSpeed = 40f;
     public int SlashDamage = 20;
     public int StabDamage = 40;
-
     public Transform AttackPoint;
     public float AttackRange = 0.5f;
     public LayerMask EnemyLayers;
@@ -27,38 +33,32 @@ public class PlayerAttackLoop : MonoBehaviour
     bool jump = false;
     bool dash = false;
     bool crouch = false;
-    float _elapsedMs;
-    List<PlayerAction> _allPlayerActions = new List<PlayerAction>();
-    List<PlayerAction> _remainingActionsInCurrentLoop = new List<PlayerAction>();
-    float _totalActionTime = 10f;
-    bool _actionRecordingComplete;
-    bool _actionsActive;
 
     private void Start()
     {
         Animator.SetBool("IsCrouching", false);
 
-        ElapsedMsText.text = $"Elapsed: {_elapsedMs.ToString()}";
+        ElapsedMsText.text = $"Elapsed: {ElapsedMs.ToString()}";
         ActionText.text = $"ACTIONS:{Environment.NewLine}";
     }
 
     private void Update()
     {
-        _elapsedMs += Time.deltaTime;
+        ElapsedMs += Time.deltaTime;
 
         // During update, can't Slash, Stab or Dash using Input controls
         // Can only move left and right
 
-        if (Input.GetKeyDown(KeyCode.Backspace) && !_isInitializingActions && !_allPlayerActions.Any())
+        if (Input.GetKeyDown(KeyCode.Backspace) && !IsInitializingActions && !_allPlayerActions.Any())
         {
-            _elapsedMs = 0f;
-            _isInitializingActions = true;
+            ElapsedMs = 0f;
+            IsInitializingActions = true;
         }
 
-        if (_isInitializingActions)
+        if (IsInitializingActions)
         {
-            ElapsedMsText.text = $"RECORDING...{Environment.NewLine}Elapsed: {_elapsedMs.ToString()}";
-
+            //ElapsedMsText.text = $"RECORDING...{Environment.NewLine}Elapsed: {ElapsedMs.ToString()}";
+            CountdownBar.SetTime(ElapsedMs);
             AddPlayerActions();
         }
         else if (_actionRecordingComplete && _actionsActive)
@@ -138,7 +138,6 @@ public class PlayerAttackLoop : MonoBehaviour
 
     private void Dash()
     {
-        //Animator.SetTrigger("Dash");
         dash = true;
     }
 
@@ -183,7 +182,7 @@ public class PlayerAttackLoop : MonoBehaviour
             return;
         }
 
-        if (_elapsedMs < currentAction.TimeActionPerformed)
+        if (ElapsedMs < currentAction.TimeActionPerformed)
             return;
 
         switch (currentAction.PlayerActionType)
@@ -207,8 +206,8 @@ public class PlayerAttackLoop : MonoBehaviour
 
     private void ResetPlayerActionLoop()
     {
-        _elapsedMs = 0f;
-        ElapsedMsText.text = $"Elapsed: {_elapsedMs.ToString()}";
+        ElapsedMs = 0f;
+        ElapsedMsText.text = $"Elapsed: {ElapsedMs.ToString()}";
         ActionText.text = $"ACTIONS: {_allPlayerActions.Count()}{Environment.NewLine}REPLAYING:{Environment.NewLine}";
         _remainingActionsInCurrentLoop = new List<PlayerAction>(_allPlayerActions);
 
@@ -216,10 +215,10 @@ public class PlayerAttackLoop : MonoBehaviour
 
     private void AddPlayerActions()
     {
-        if (_elapsedMs >= _totalActionTime)
+        if (ElapsedMs >= _totalActionTime)
         {
             ResetPlayerActionLoop();
-            _isInitializingActions = false;
+            IsInitializingActions = false;
             _actionRecordingComplete = true;
             _actionsActive = true;
             return;
@@ -227,35 +226,27 @@ public class PlayerAttackLoop : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            var slash = new PlayerAction { PlayerActionType = PlayerActionTypeEnum.Slash, TimeActionPerformed = _elapsedMs };
+            var slash = new PlayerAction { PlayerActionType = PlayerActionTypeEnum.Slash, TimeActionPerformed = ElapsedMs };
             _allPlayerActions.Add(slash);
-
+            CountdownBar.AddActionImage(slash);
             ActionText.text += $"{slash.PlayerActionType.ToString()}: {slash.TimeActionPerformed}{Environment.NewLine}";
         }
 
         if (Input.GetMouseButtonUp(1))
         {
-            var stab = new PlayerAction { PlayerActionType = PlayerActionTypeEnum.Stab, TimeActionPerformed = _elapsedMs };
+            var stab = new PlayerAction { PlayerActionType = PlayerActionTypeEnum.Stab, TimeActionPerformed = ElapsedMs };
             _allPlayerActions.Add(stab);
-
+            CountdownBar.AddActionImage(stab);
             ActionText.text += $"{stab.PlayerActionType.ToString()}: {stab.TimeActionPerformed}{Environment.NewLine}";
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            var dash = new PlayerAction { PlayerActionType = PlayerActionTypeEnum.Dash, TimeActionPerformed = _elapsedMs };
+            var dash = new PlayerAction { PlayerActionType = PlayerActionTypeEnum.Dash, TimeActionPerformed = ElapsedMs };
             _allPlayerActions.Add(dash);
-
+            CountdownBar.AddActionImage(dash);
             ActionText.text += $"{dash.PlayerActionType.ToString()}: {dash.TimeActionPerformed}{Environment.NewLine}";
         }
-
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    var jump = new PlayerAction { PlayerActionType = PlayerActionTypeEnum.Jump, TimeActionPerformed = _elapsedMs };
-        //    _allPlayerActions.Add(jump);
-
-        //    ActionText.text += $"{jump.PlayerActionType.ToString()}: {jump.TimeActionPerformed}{Environment.NewLine}";
-        //}
     }
 }
 
