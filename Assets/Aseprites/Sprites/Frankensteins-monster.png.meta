@@ -11,6 +11,15 @@ TextureImporter:
   - first:
       213: -2411352215935260634
     second: Frankensteins-monster 2
+  - first:
+      213: 8655240195070457872
+    second: Frankensteins-monster 3
+  - first:
+      213: 4947712663912146315
+    second: Frankensteins-monster 4
+  - first:
+      213: 2271251776369451862
+    second: Frankensteins-monster 5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -72,7 +81,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 96
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -131,8 +140,8 @@ TextureImporter:
       name: Frankensteins-monster 2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 64
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -144,6 +153,69 @@ TextureImporter:
       bones: []
       spriteID: 628e3dc7fe7298ed0800000000000000
       internalID: -2411352215935260634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frankensteins-monster 3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0187bd899179d1870800000000000000
+      internalID: 8655240195070457872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frankensteins-monster 4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b856f27247ec9a440800000000000000
+      internalID: 4947712663912146315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frankensteins-monster 5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 653e9fdf47b158f10800000000000000
+      internalID: 2271251776369451862
       vertices: []
       indices: 
       edges: []

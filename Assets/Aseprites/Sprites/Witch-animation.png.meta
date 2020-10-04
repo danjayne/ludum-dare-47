@@ -32,6 +32,45 @@ TextureImporter:
   - first:
       213: -3731566337511555316
     second: Witch-animation_witch_fly_0_4
+  - first:
+      213: 5356209482777299796
+    second: Witch-animation 0
+  - first:
+      213: 868658078515952040
+    second: Witch-animation 1
+  - first:
+      213: 3362991553407536339
+    second: Witch-animation 2
+  - first:
+      213: -1865959373927552121
+    second: Witch-animation 3
+  - first:
+      213: -7504937341874662570
+    second: Witch-animation 4
+  - first:
+      213: 387677725773219742
+    second: Witch-animation 5
+  - first:
+      213: 6556392576499092561
+    second: Witch-animation 6
+  - first:
+      213: -4650286512893995926
+    second: Witch-animation 7
+  - first:
+      213: 5954963353363221182
+    second: Witch-animation 8
+  - first:
+      213: 5778921429397127491
+    second: Witch-animation 9
+  - first:
+      213: -7033151690464202726
+    second: Witch-animation 10
+  - first:
+      213: 7680795576345755825
+    second: Witch-animation 11
+  - first:
+      213: -8797713758906099359
+    second: Witch-animation 12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -93,7 +132,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 96
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -107,7 +146,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Witch-animation_witch_idle_0_0
+      name: Witch-animation 0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d98ec166ff9d45360800000000000000
-      internalID: 7157585398751619229
+      spriteID: 45b058b6524155a40800000000000000
+      internalID: 5356209482777299796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch-animation_witch_idle_0_1
+      name: Witch-animation 1
       rect:
         serializedVersion: 2
         x: 32
@@ -142,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cdc31bc85cca27ef0800000000000000
-      internalID: -111837076261880612
+      spriteID: 8a977398be71e0c00800000000000000
+      internalID: 868658078515952040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch-animation_witch_idle_0_2
+      name: Witch-animation 2
       rect:
         serializedVersion: 2
         x: 0
@@ -163,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef19bd8cbfaae00d0800000000000000
-      internalID: -3454635865763245570
+      spriteID: 3dcce7bfffebbae20800000000000000
+      internalID: 3362991553407536339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch-animation_witch_idle_0_3
+      name: Witch-animation 3
       rect:
         serializedVersion: 2
         x: 64
@@ -184,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a1f6888899a3cfa00800000000000000
-      internalID: 791572065605414682
+      spriteID: 78becbfe5d7ca16e0800000000000000
+      internalID: -1865959373927552121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch-animation_witch_idle_0_4
+      name: Witch-animation 4
       rect:
         serializedVersion: 2
         x: 0
@@ -205,14 +244,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca65adf9cce57a320800000000000000
-      internalID: 2569126345386383020
+      spriteID: 6531ffb104b19d790800000000000000
+      internalID: -7504937341874662570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch-animation_witch_fly_0_0
+      name: Witch-animation 5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e974b0c66de416500800000000000000
+      internalID: 387677725773219742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Witch-animation 6
       rect:
         serializedVersion: 2
         x: 0
@@ -226,14 +286,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 614c649a488cf0ea0800000000000000
-      internalID: -5904280114358205418
+      spriteID: 15c8c32af4cfcfa50800000000000000
+      internalID: 6556392576499092561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch-animation_witch_fly_0_1
+      name: Witch-animation 7
       rect:
         serializedVersion: 2
         x: 32
@@ -247,14 +307,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4371c27b8816773e0800000000000000
-      internalID: -2056067465054775500
+      spriteID: a64d9270e0dd67fb0800000000000000
+      internalID: -4650286512893995926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch-animation_witch_fly_0_2
+      name: Witch-animation 8
       rect:
         serializedVersion: 2
         x: 64
@@ -268,14 +328,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 04e856db0df0397e0800000000000000
-      internalID: -1760045640166568384
+      spriteID: eba0faf7e9744a250800000000000000
+      internalID: 5954963353363221182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch-animation_witch_fly_0_3
+      name: Witch-animation 9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 341cb180c6ad23050800000000000000
+      internalID: 5778921429397127491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Witch-animation 10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a10717efcc9356e90800000000000000
+      internalID: -7033151690464202726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Witch-animation 11
       rect:
         serializedVersion: 2
         x: 0
@@ -289,14 +391,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 785087ddd142c7c40800000000000000
-      internalID: 5511319754682926471
+      spriteID: 1b00b70d1eaa79a60800000000000000
+      internalID: 7680795576345755825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch-animation_witch_fly_0_4
+      name: Witch-animation 12
       rect:
         serializedVersion: 2
         x: 32
@@ -310,8 +412,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0f71dccf20d63cc0800000000000000
-      internalID: -3731566337511555316
+      spriteID: 169d5d4d2fd38e580800000000000000
+      internalID: -8797713758906099359
       vertices: []
       indices: 
       edges: []

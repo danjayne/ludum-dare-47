@@ -8,6 +8,12 @@ TextureImporter:
   - first:
       213: -8744274425694027655
     second: Spider 1
+  - first:
+      213: -5530627178743334547
+    second: Spider 2
+  - first:
+      213: 8285729356457923197
+    second: Spider 3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -87,7 +93,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -108,7 +114,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -120,6 +126,48 @@ TextureImporter:
       bones: []
       spriteID: 97089fd2db816a680800000000000000
       internalID: -8744274425694027655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider 2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d69f1e922e34f33b0800000000000000
+      internalID: -5530627178743334547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider 3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7253b433f2dcf270800000000000000
+      internalID: 8285729356457923197
       vertices: []
       indices: 
       edges: []

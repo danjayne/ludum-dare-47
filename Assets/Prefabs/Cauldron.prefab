@@ -83,6 +83,8 @@ GameObject:
   - component: {fileID: 6307705074820822099}
   - component: {fileID: 6307705074820822100}
   - component: {fileID: 6307705074820822101}
+  - component: {fileID: 1387185708}
+  - component: {fileID: 7469501599736344192}
   m_Layer: 13
   m_Name: Cauldron
   m_TagString: Untagged
@@ -166,7 +168,7 @@ Animator:
   m_GameObject: {fileID: 6307705074820822102}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5da676810cbfb104b9ee50b95f069082, type: 2}
+  m_Controller: {fileID: 9100000, guid: 132984e8a25657c4c9064894bb019ed2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -175,3 +177,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &1387185708
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307705074820822102}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.36}
+  serializedVersion: 2
+  m_Radius: 0.4164617
+--- !u!114 &7469501599736344192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307705074820822102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56597464d0d77954d9490719bc93fdad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 60

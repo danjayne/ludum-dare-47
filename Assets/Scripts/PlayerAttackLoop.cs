@@ -16,6 +16,8 @@ public class PlayerAttackLoop : MonoBehaviour
     public CharacterController2D CController;
     public Animator Animator;
     public float RunSpeed = 40f;
+    public int SlashDamage = 20;
+    public int StabDamage = 40;
 
     public Transform AttackPoint;
     public float AttackRange = 0.5f;
@@ -133,7 +135,12 @@ public class PlayerAttackLoop : MonoBehaviour
     private void Attack2()
     {
         Animator.SetTrigger("Attack2");
-        Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange, EnemyLayers);
+        var hits = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange, EnemyLayers);
+
+        foreach (var enemy in hits)
+        {
+            enemy.GetComponent<StandardEnemy>().TakeDamage(StabDamage);
+        }
     }
 
     private void Attack1()
@@ -143,7 +150,7 @@ public class PlayerAttackLoop : MonoBehaviour
     
         foreach (var enemy in hits)
         {
-            Debug.Log($"We hit {enemy.name}");
+            enemy.GetComponent<StandardEnemy>().TakeDamage(SlashDamage);
         }
     }
 
