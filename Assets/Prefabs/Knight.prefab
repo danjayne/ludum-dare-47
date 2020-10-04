@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 5934389025166143749}
   - component: {fileID: 5934389025166143756}
   - component: {fileID: 5934389025166143747}
-  - component: {fileID: 5934389025166143746}
   - component: {fileID: 5934389025166143745}
   - component: {fileID: 5934389025166143744}
   - component: {fileID: 5934389025166143751}
@@ -253,20 +252,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5934389025166143746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5934389025166143748}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd55e39b3560a54f8fd43e2a33b04ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 5934389025166143747}
-  runSpeed: 400
+  OnDashEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &5934389025166143745
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -347,6 +335,8 @@ MonoBehaviour:
   CController: {fileID: 5934389025166143747}
   Animator: {fileID: 5934389025166143756}
   RunSpeed: 70
+  SlashDamage: 20
+  StabDamage: 40
   AttackPoint: {fileID: 1472056881}
   AttackRange: 0.5
   EnemyLayers:

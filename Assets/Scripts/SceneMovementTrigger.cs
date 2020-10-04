@@ -36,5 +36,11 @@ public class SceneMovementTrigger : MonoBehaviour
         {
             _vCam.Follow = _leftScene;
         }
+
+        SpriteRenderer sr = _vCam.Follow.Find("Cloud-Background").GetComponent<SpriteRenderer>();
+        _vCam.m_Lens.OrthographicSize = (sr.bounds.size.x * Screen.height) / Screen.width * 0.5f;
+
+        // (width of follow x scene height) / screen.width
+        // / 2
     }
 }

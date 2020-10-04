@@ -31,12 +31,18 @@ public class CharacterController2D : MonoBehaviour
     public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
 
+    public UnityEvent OnDashEvent;
+    private bool _isJumping;
+
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
+
+        if (OnDashEvent == null)
+            OnDashEvent = new UnityEvent();
 
         if (OnCrouchEvent == null)
             OnCrouchEvent = new BoolEvent();
@@ -56,7 +62,10 @@ public class CharacterController2D : MonoBehaviour
             {
                 m_Grounded = true;
                 if (!wasGrounded)
+                {
                     OnLandEvent.Invoke();
+                    _isJumping = false;
+                }    
             }
         }
     }
@@ -130,14 +139,16 @@ public class CharacterController2D : MonoBehaviour
         {
             // Add a vertical force to the player.
             m_Grounded = false;
+            _isJumping = true;
             m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
         }
 
-        if (dash)
+        if (!m_Grounded && _isJumping && dash)
         {
             m_Grounded = false;
             var dashForce = m_JumpForce * _DashMultiplier;
             m_Rigidbody2D.AddForce(new Vector2(m_FacingRight ? dashForce : -dashForce, 0f));
+            OnDashEvent.Invoke();
         }
     }
 

@@ -82,6 +82,11 @@ public class PlayerAttackLoop : MonoBehaviour
         Animator.SetBool("IsJumping", false);
     }
 
+    public void OnDashing()
+    { 
+        Animator.SetTrigger("Dash");
+    }
+
     public void OnCrouching(bool crouching)
     {
         Animator.SetBool("IsCrouching", crouching);
@@ -133,7 +138,7 @@ public class PlayerAttackLoop : MonoBehaviour
 
     private void Dash()
     {
-        Animator.SetTrigger("Dash");
+        //Animator.SetTrigger("Dash");
         dash = true;
     }
 
