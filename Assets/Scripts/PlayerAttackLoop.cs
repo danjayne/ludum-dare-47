@@ -21,7 +21,7 @@ public class PlayerAttackLoop : MonoBehaviour
     float _elapsedMs;
     List<PlayerAction> _allPlayerActions = new List<PlayerAction>();
     List<PlayerAction> _remainingActionsInCurrentLoop = new List<PlayerAction>();
-    float _totalActionTime = 5f;
+    float _totalActionTime = 10f;
     bool _actionRecordingComplete;
     bool _actionsActive;
 
