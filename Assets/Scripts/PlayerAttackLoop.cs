@@ -25,6 +25,7 @@ public class PlayerAttackLoop : MonoBehaviour
 
     float horizontalMove = 0f;
     bool jump = false;
+    bool dash = false;
     bool crouch = false;
     float _elapsedMs;
     List<PlayerAction> _allPlayerActions = new List<PlayerAction>();
@@ -71,8 +72,9 @@ public class PlayerAttackLoop : MonoBehaviour
     void FixedUpdate()
     {
         // Move our character
-        CController.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        CController.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump, dash);
         jump = false;
+        dash = false;
     }
 
     public void OnLanding()
@@ -131,7 +133,7 @@ public class PlayerAttackLoop : MonoBehaviour
     private void Dash()
     {
         Animator.SetTrigger("Dash");
-        //m_Rigidbody2D.AddForce(new Vector2(m_JumpForce, 0f));
+        dash = true;
     }
 
     private void Stab()
