@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.UI;
+using UnityEngineInternal;
 
 public class PlayerAttackLoop : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerAttackLoop : MonoBehaviour
     public Animator Animator;
     public float RunSpeed = 40f;
 
+    float _crouchSpeed;
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
@@ -28,6 +30,8 @@ public class PlayerAttackLoop : MonoBehaviour
 
     private void Start()
     {
+        _crouchSpeed = RunSpeed / 2;
+
         ElapsedMsText.text = $"Elapsed: {_elapsedMs.ToString()}";
         ActionText.text = $"ACTIONS:{Environment.NewLine}";
     }
@@ -64,14 +68,16 @@ public class PlayerAttackLoop : MonoBehaviour
 
     public void OnCrouching()
     {
-        Animator.SetBool("IsCrouching", true);
+        
     }
 
     private void ReadNormalPlayerInput()
     {
         //Debug.Log("Normal player input");
 
-        horizontalMove = Input.GetAxisRaw("Horizontal") * RunSpeed;
+        var runSpeed = crouch ? _crouchSpeed : RunSpeed;
+
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         Animator.SetFloat("MovementSpeed", Math.Abs(horizontalMove));
 
         if (!_actionsActive && Input.GetButtonDown("Jump"))
@@ -82,6 +88,7 @@ public class PlayerAttackLoop : MonoBehaviour
 
         if (Input.GetButtonDown("Crouch"))
         {
+            Animator.SetBool("IsCrouching", true);
             crouch = true;
         }
         else if (Input.GetButtonUp("Crouch"))
