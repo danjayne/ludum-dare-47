@@ -12,8 +12,9 @@ public class PlayerAttackLoop : MonoBehaviour
 
     public Text ElapsedMsText;
     public Text ActionText;
-    public CharacterController2D controller;
-    public float runSpeed = 40f;
+    public CharacterController2D CController;
+    public Animator Animator;
+    public float RunSpeed = 40f;
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -56,14 +57,26 @@ public class PlayerAttackLoop : MonoBehaviour
         ReadNormalPlayerInput();
     }
 
+    public void OnLanding()
+    {
+        Animator.SetBool("IsJumping", false);
+    }
+
+    public void OnCrouching()
+    {
+        Animator.SetBool("IsCrouching", true);
+    }
+
     private void ReadNormalPlayerInput()
     {
         //Debug.Log("Normal player input");
 
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        horizontalMove = Input.GetAxisRaw("Horizontal") * RunSpeed;
+        Animator.SetFloat("MovementSpeed", Math.Abs(horizontalMove));
 
         if (!_actionsActive && Input.GetButtonDown("Jump"))
         {
+            Animator.SetBool("IsJumping", true);
             jump = true;
         }
 
@@ -73,6 +86,7 @@ public class PlayerAttackLoop : MonoBehaviour
         }
         else if (Input.GetButtonUp("Crouch"))
         {
+            Animator.SetBool("IsCrouching", false);
             crouch = false;
         }
     }
@@ -130,7 +144,7 @@ public class PlayerAttackLoop : MonoBehaviour
     void FixedUpdate()
     {
         // Move our character
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        CController.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
     }
 
