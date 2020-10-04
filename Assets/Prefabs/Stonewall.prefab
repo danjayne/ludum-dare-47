@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5386655340244787424}
   - component: {fileID: 1754840301823825814}
   - component: {fileID: 7737537985248125353}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Stonewall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5605566866570257178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6, y: 1.6, z: 1}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -92,7 +92,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 5605566866570257178}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 72185265e8177ae4682dfda1abaeb288, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

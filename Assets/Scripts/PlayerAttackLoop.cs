@@ -17,7 +17,6 @@ public class PlayerAttackLoop : MonoBehaviour
     public Animator Animator;
     public float RunSpeed = 40f;
 
-    float _crouchSpeed;
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
@@ -30,7 +29,7 @@ public class PlayerAttackLoop : MonoBehaviour
 
     private void Start()
     {
-        _crouchSpeed = RunSpeed / 2;
+        Animator.SetBool("IsCrouching", false);
 
         ElapsedMsText.text = $"Elapsed: {_elapsedMs.ToString()}";
         ActionText.text = $"ACTIONS:{Environment.NewLine}";
@@ -66,16 +65,16 @@ public class PlayerAttackLoop : MonoBehaviour
         Animator.SetBool("IsJumping", false);
     }
 
-    public void OnCrouching()
+    public void OnCrouching(bool crouching)
     {
-        
+        Animator.SetBool("IsCrouching", crouching);
     }
 
     private void ReadNormalPlayerInput()
     {
         //Debug.Log("Normal player input");
 
-        var runSpeed = crouch ? _crouchSpeed : RunSpeed;
+        var runSpeed = crouch ? RunSpeed : RunSpeed;
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         Animator.SetFloat("MovementSpeed", Math.Abs(horizontalMove));
@@ -88,12 +87,10 @@ public class PlayerAttackLoop : MonoBehaviour
 
         if (Input.GetButtonDown("Crouch"))
         {
-            Animator.SetBool("IsCrouching", true);
             crouch = true;
         }
         else if (Input.GetButtonUp("Crouch"))
         {
-            Animator.SetBool("IsCrouching", false);
             crouch = false;
         }
     }
