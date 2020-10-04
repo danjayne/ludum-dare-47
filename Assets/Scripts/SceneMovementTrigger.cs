@@ -6,21 +6,35 @@ using UnityEngine;
 
 public class SceneMovementTrigger : MonoBehaviour
 {
-    public Transform LeftScene;
-    public Transform RightScene;
+    private Transform _leftScene;
+    private Transform _rightScene;
     public CinemachineVirtualCamera _vCam;
-    
+
+    private void Start()
+    {
+        var sceneNumStr = gameObject.transform.parent.name.Split(new string[] { "TransitionTrigger" }, StringSplitOptions.RemoveEmptyEntries)[0];
+        int.TryParse(sceneNumStr, out int sceneNum);
+
+        _leftScene = GetSceneByIndex(sceneNum);
+        _rightScene = GetSceneByIndex(sceneNum+1);
+    }
+
+    private Transform GetSceneByIndex(int sceneNum)
+    {
+        return GameObject.Find($"Scene{sceneNum}")?.transform;
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         var bc = GetComponent<BoxCollider2D>();
 
         if (collision.transform.position.x > bc.bounds.max.x)
         {
-            _vCam.Follow = RightScene;
+            _vCam.Follow = _rightScene;
         }
         else if (collision.transform.position.x < bc.bounds.min.x)
         {
-            _vCam.Follow = LeftScene;
+            _vCam.Follow = _leftScene;
         }
     }
 }
