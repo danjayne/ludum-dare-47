@@ -113,6 +113,18 @@ TextureImporter:
   - first:
       213: 4307022903465614968
     second: Knight 36
+  - first:
+      213: 58872186761109989
+    second: Knight 37
+  - first:
+      213: 838480372547558991
+    second: Knight 38
+  - first:
+      213: -6273970348934240039
+    second: Knight 39
+  - first:
+      213: -8909586029580501290
+    second: Knight 40
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -960,6 +972,48 @@ TextureImporter:
       bones: []
       spriteID: 87e1a88d28e95cb30800000000000000
       internalID: 4307022903465614968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight 37
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e1eb0321f721d000800000000000000
+      internalID: 58872186761109989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight 38
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4e95d4d471e2ab00800000000000000
+      internalID: 838480372547558991
       vertices: []
       indices: 
       edges: []
