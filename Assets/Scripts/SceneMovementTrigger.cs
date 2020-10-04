@@ -7,18 +7,28 @@ public class SceneMovementTrigger : MonoBehaviour
 {
     public Transform LeftScene;
     public Transform RightScene;
-
-    private CinemachineVirtualCamera _vCam;
+    public CinemachineVirtualCamera _vCam;
     
-    void Start()
+    private Transform _player;
+
+    private void Start()
     {
-        _vCam = Camera.main.GetComponent<CinemachineVirtualCamera>();
+        _player = GameObject.FindGameObjectWithTag("Player").transform;    
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _vCam.Follow = collision.transform.position.x < GetComponent<SpriteRenderer>().bounds.center.x ?
-            _vCam.Follow = RightScene :
+        var bc = GetComponent<BoxCollider2D>();
+
+        if (collision.transform.position.x < bc.bounds.center.x)
+        {
+            _vCam.Follow = RightScene;
+            _player.position.Set(bc.bounds.max.x + 1, _player.position.y, _player.position.z);
+        }
+        else
+        {
             _vCam.Follow = LeftScene;
+            _player.position.Set(bc.bounds.min.x - 1, _player.position.y, _player.position.z);
+        }
     }
 }
