@@ -71,6 +71,15 @@ TextureImporter:
   - first:
       213: -8797713758906099359
     second: Witch-animation 12
+  - first:
+      213: 3331355371832647320
+    second: Witch-animation 13
+  - first:
+      213: -2485560302785405153
+    second: Witch-animation 14
+  - first:
+      213: 1713768640838796865
+    second: Witch-animation 15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -191,7 +200,7 @@ TextureImporter:
       name: Witch-animation 2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 64
         y: 64
         width: 32
         height: 32
@@ -212,7 +221,7 @@ TextureImporter:
       name: Witch-animation 3
       rect:
         serializedVersion: 2
-        x: 64
+        x: 96
         y: 64
         width: 32
         height: 32
@@ -234,7 +243,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -254,8 +263,8 @@ TextureImporter:
       name: Witch-animation 5
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
+        x: 32
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -275,7 +284,7 @@ TextureImporter:
       name: Witch-animation 6
       rect:
         serializedVersion: 2
-        x: 0
+        x: 64
         y: 32
         width: 32
         height: 32
@@ -296,7 +305,7 @@ TextureImporter:
       name: Witch-animation 7
       rect:
         serializedVersion: 2
-        x: 32
+        x: 96
         y: 32
         width: 32
         height: 32
@@ -317,8 +326,8 @@ TextureImporter:
       name: Witch-animation 8
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
+        x: 0
+        y: 0
         width: 32
         height: 32
       alignment: 7
@@ -338,69 +347,6 @@ TextureImporter:
       name: Witch-animation 9
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 341cb180c6ad23050800000000000000
-      internalID: 5778921429397127491
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Witch-animation 10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a10717efcc9356e90800000000000000
-      internalID: -7033151690464202726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Witch-animation 11
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1b00b70d1eaa79a60800000000000000
-      internalID: 7680795576345755825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Witch-animation 12
-      rect:
-        serializedVersion: 2
         x: 32
         y: 0
         width: 32
@@ -412,8 +358,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 169d5d4d2fd38e580800000000000000
-      internalID: -8797713758906099359
+      spriteID: 341cb180c6ad23050800000000000000
+      internalID: 5778921429397127491
       vertices: []
       indices: 
       edges: []

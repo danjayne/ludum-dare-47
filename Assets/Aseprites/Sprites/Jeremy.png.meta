@@ -14,6 +14,12 @@ TextureImporter:
   - first:
       213: 3086920664490674807
     second: Jeremy 3
+  - first:
+      213: 6321246157968258926
+    second: Jeremy 4
+  - first:
+      213: 5485616757353069806
+    second: Jeremy 5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -75,7 +81,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 96
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -134,8 +140,8 @@ TextureImporter:
       name: Jeremy 2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 64
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -155,8 +161,8 @@ TextureImporter:
       name: Jeremy 3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 0
+        y: 0
         width: 32
         height: 32
       alignment: 7
@@ -168,6 +174,48 @@ TextureImporter:
       bones: []
       spriteID: 77a87c83df1f6da20800000000000000
       internalID: 3086920664490674807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeremy 4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e673087a3e399b750800000000000000
+      internalID: 6321246157968258926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jeremy 5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eecb5f37063d02c40800000000000000
+      internalID: 5485616757353069806
       vertices: []
       indices: 
       edges: []
