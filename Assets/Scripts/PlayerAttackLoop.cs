@@ -44,18 +44,20 @@ public class PlayerAttackLoop : MonoBehaviour
     private void Update()
     {
         _elapsedMs += Time.deltaTime;
-        ElapsedMsText.text = $"Elapsed: {_elapsedMs.ToString()}";
 
         // During update, can't Slash, Stab, Dash or Jump using Input controls
         // Can only move left and right
 
         if (Input.GetKeyDown(KeyCode.Backspace) && !_isInitializingActions && !_allPlayerActions.Any())
         {
+            _elapsedMs = 0f;
             _isInitializingActions = true;
         }
 
         if (_isInitializingActions)
         {
+            ElapsedMsText.text = $"RECORDING...{Environment.NewLine}Elapsed: {_elapsedMs.ToString()}";
+
             AddPlayerActions();
         }
         else if (_actionRecordingComplete && _actionsActive)
@@ -103,11 +105,11 @@ public class PlayerAttackLoop : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Attack1();
+                Slash();
             }
             else if (Input.GetMouseButtonDown(1))
             {
-                Attack2();
+                Stab();
             }
             else if (Input.GetKeyDown(KeyCode.LeftShift))
             {
@@ -132,7 +134,7 @@ public class PlayerAttackLoop : MonoBehaviour
         //m_Rigidbody2D.AddForce(new Vector2(m_JumpForce, 0f));
     }
 
-    private void Attack2()
+    private void Stab()
     {
         Animator.SetTrigger("Attack2");
         var hits = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange, EnemyLayers);
@@ -143,7 +145,7 @@ public class PlayerAttackLoop : MonoBehaviour
         }
     }
 
-    private void Attack1()
+    private void Slash()
     {
         Animator.SetTrigger("Attack1");
         var hits =  Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange, EnemyLayers);
@@ -179,22 +181,23 @@ public class PlayerAttackLoop : MonoBehaviour
         switch (currentAction.PlayerActionType)
         {
             case PlayerActionTypeEnum.Jump:
-                jump = true;
+                Jump();
+                break;
+            case PlayerActionTypeEnum.Dash:
+                Dash();
+                break;
+            case PlayerActionTypeEnum.Slash:
+                Slash();
+                break;
+            case PlayerActionTypeEnum.Stab:
+                Stab();
                 break;
             default:
-                //Debug.LogWarning($"{currentAction.PlayerActionType} replayed at {currentAction.TimeActionPerformed}");
+                Debug.LogError($"Can't handle {currentAction.PlayerActionType}");
                 break;
-                //case PlayerActionTypeEnum.Dash:
-                //    break;
-                //case PlayerActionTypeEnum.Slash:
-                //    break;
-                //case PlayerActionTypeEnum.Stab:
-                //    break;
         }
 
         _remainingActionsInCurrentLoop.Remove(currentAction);
-
-        //ActionText.text += $"Currently {_remainingActionsInCurrentLoop}{nameof(_remainingActionsInCurrentLoop)}";
     }
 
     private void ResetPlayerActionLoop()
