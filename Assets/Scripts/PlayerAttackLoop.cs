@@ -46,7 +46,7 @@ public class PlayerAttackLoop : MonoBehaviour
     {
         _elapsedMs += Time.deltaTime;
 
-        // During update, can't Slash, Stab, Dash or Jump using Input controls
+        // During update, can't Slash, Stab or Dash using Input controls
         // Can only move left and right
 
         if (Input.GetKeyDown(KeyCode.Backspace) && !_isInitializingActions && !_allPlayerActions.Any())
@@ -103,6 +103,11 @@ public class PlayerAttackLoop : MonoBehaviour
             crouch = false;
         }
 
+        if (Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
+
         if (!_actionsActive)
         {
             if (Input.GetMouseButtonDown(0))
@@ -116,10 +121,6 @@ public class PlayerAttackLoop : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 Dash();
-            }
-            else if (Input.GetButtonDown("Jump"))
-            {
-                Jump();
             }
         }
     }
@@ -182,9 +183,6 @@ public class PlayerAttackLoop : MonoBehaviour
 
         switch (currentAction.PlayerActionType)
         {
-            case PlayerActionTypeEnum.Jump:
-                Jump();
-                break;
             case PlayerActionTypeEnum.Dash:
                 Dash();
                 break;
@@ -246,13 +244,13 @@ public class PlayerAttackLoop : MonoBehaviour
             ActionText.text += $"{dash.PlayerActionType.ToString()}: {dash.TimeActionPerformed}{Environment.NewLine}";
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            var jump = new PlayerAction { PlayerActionType = PlayerActionTypeEnum.Jump, TimeActionPerformed = _elapsedMs };
-            _allPlayerActions.Add(jump);
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    var jump = new PlayerAction { PlayerActionType = PlayerActionTypeEnum.Jump, TimeActionPerformed = _elapsedMs };
+        //    _allPlayerActions.Add(jump);
 
-            ActionText.text += $"{jump.PlayerActionType.ToString()}: {jump.TimeActionPerformed}{Environment.NewLine}";
-        }
+        //    ActionText.text += $"{jump.PlayerActionType.ToString()}: {jump.TimeActionPerformed}{Environment.NewLine}";
+        //}
     }
 }
 
@@ -267,6 +265,5 @@ public enum PlayerActionTypeEnum
 {
     Slash,
     Stab,
-    Dash,
-    Jump
+    Dash
 }
