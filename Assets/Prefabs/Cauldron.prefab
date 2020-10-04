@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1115840830}
   - component: {fileID: 1115840831}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 6307705074820822099}
   - component: {fileID: 6307705074820822100}
   - component: {fileID: 6307705074820822101}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cauldron
   m_TagString: Untagged
   m_Icon: {fileID: 0}

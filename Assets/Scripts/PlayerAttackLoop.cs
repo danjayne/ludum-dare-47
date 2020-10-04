@@ -17,6 +17,10 @@ public class PlayerAttackLoop : MonoBehaviour
     public Animator Animator;
     public float RunSpeed = 40f;
 
+    public Transform AttackPoint;
+    public float AttackRange = 0.5f;
+    public LayerMask EnemyLayers;
+
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
@@ -60,6 +64,13 @@ public class PlayerAttackLoop : MonoBehaviour
         ReadNormalPlayerInput();
     }
 
+    void FixedUpdate()
+    {
+        // Move our character
+        CController.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        jump = false;
+    }
+
     public void OnLanding()
     {
         Animator.SetBool("IsJumping", false);
@@ -72,18 +83,10 @@ public class PlayerAttackLoop : MonoBehaviour
 
     private void ReadNormalPlayerInput()
     {
-        //Debug.Log("Normal player input");
-
         var runSpeed = crouch ? RunSpeed : RunSpeed;
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         Animator.SetFloat("MovementSpeed", Math.Abs(horizontalMove));
-
-        if (!_actionsActive && Input.GetButtonDown("Jump"))
-        {
-            Animator.SetBool("IsJumping", true);
-            jump = true;
-        }
 
         if (Input.GetButtonDown("Crouch"))
         {
@@ -93,16 +96,67 @@ public class PlayerAttackLoop : MonoBehaviour
         {
             crouch = false;
         }
+
+        if (!_actionsActive)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Attack1();
+            }
+            else if (Input.GetMouseButtonDown(1))
+            {
+                Attack2();
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                Dash();
+            }
+            else if (Input.GetButtonDown("Jump"))
+            {
+                Jump();
+            }
+        }
     }
 
-    // Update is called once per frame
+    private void Jump()
+    {
+        Animator.SetBool("IsJumping", true);
+        jump = true;
+    }
+
+    private void Dash()
+    {
+        Animator.SetTrigger("Dash");
+        //m_Rigidbody2D.AddForce(new Vector2(m_JumpForce, 0f));
+    }
+
+    private void Attack2()
+    {
+        Animator.SetTrigger("Attack2");
+        Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange, EnemyLayers);
+    }
+
+    private void Attack1()
+    {
+        Animator.SetTrigger("Attack1");
+        var hits =  Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange, EnemyLayers);
+    
+        foreach (var enemy in hits)
+        {
+            Debug.Log($"We hit {enemy.name}");
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (AttackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(AttackPoint.position, AttackRange);
+    }
+
     void ReplayPlayerActions()
     {
-        //Debug.Log("Replay player actions");
-
-        //ActionText.text += $"Currently {_remainingActionsInCurrentLoop.Count}{nameof(_remainingActionsInCurrentLoop)}";
-
-        // loop through player actions
         PlayerAction currentAction = _remainingActionsInCurrentLoop.FirstOrDefault();
 
         if (currentAction == null)
@@ -123,12 +177,12 @@ public class PlayerAttackLoop : MonoBehaviour
             default:
                 //Debug.LogWarning($"{currentAction.PlayerActionType} replayed at {currentAction.TimeActionPerformed}");
                 break;
-            //case PlayerActionTypeEnum.Dash:
-            //    break;
-            //case PlayerActionTypeEnum.Slash:
-            //    break;
-            //case PlayerActionTypeEnum.Stab:
-            //    break;
+                //case PlayerActionTypeEnum.Dash:
+                //    break;
+                //case PlayerActionTypeEnum.Slash:
+                //    break;
+                //case PlayerActionTypeEnum.Stab:
+                //    break;
         }
 
         _remainingActionsInCurrentLoop.Remove(currentAction);
@@ -143,13 +197,6 @@ public class PlayerAttackLoop : MonoBehaviour
         ActionText.text = $"ACTIONS: {_allPlayerActions.Count()}{Environment.NewLine}REPLAYING:{Environment.NewLine}";
         _remainingActionsInCurrentLoop = new List<PlayerAction>(_allPlayerActions);
 
-    }
-
-    void FixedUpdate()
-    {
-        // Move our character
-        CController.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
-        jump = false;
     }
 
     private void AddPlayerActions()
