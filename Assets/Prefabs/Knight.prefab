@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 1149414657}
   m_Layer: 0
   m_Name: Knight
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5934389025166143748}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fd55e39b3560a54f8fd43e2a33b04ce, type: 3}
   m_Name: 
@@ -289,3 +289,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ElapsedMsText: {fileID: 0}
   ActionText: {fileID: 0}
+  controller: {fileID: 5934389025166143747}
+  runSpeed: 400
