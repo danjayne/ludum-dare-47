@@ -108,7 +108,7 @@ public class AudioManager : MonoBehaviour
             case SoundEffectEnum.Cauldron: return "magic-cauldron";
             case SoundEffectEnum.CurseIntro: return "Curse-intro-sound";
             case SoundEffectEnum.Dash: return "dash";
-            case SoundEffectEnum.Footsteps: return "footsteps-on-grass-sound";
+            case SoundEffectEnum.Footsteps: return "footstep";
             case SoundEffectEnum.FrankensteinHurt: return "frankenstein-hurt";
             case SoundEffectEnum.GhostHurt: return "ghost-hurt";
             case SoundEffectEnum.GravestoneMoving: return "gravestone-moving";

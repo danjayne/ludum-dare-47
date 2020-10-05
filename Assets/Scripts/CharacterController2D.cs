@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
@@ -20,6 +21,9 @@ public class CharacterController2D : MonoBehaviour
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
     const float _DashMultiplier = 4f;
+
+    public float FootstepSoundDelay = .6f;
+    float timeSinceLastFootstep;
 
     [Header("Events")]
     [Space]
@@ -68,6 +72,14 @@ public class CharacterController2D : MonoBehaviour
                     OnLandEvent.Invoke();
                 }
             }
+        }
+
+        timeSinceLastFootstep += Time.deltaTime;
+
+        if (Math.Abs(m_Rigidbody2D.velocity.x) > 0.01 && m_Grounded && timeSinceLastFootstep > FootstepSoundDelay)
+        {
+            AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.Footsteps, 2f);
+            timeSinceLastFootstep = 0f;
         }
     }
 
