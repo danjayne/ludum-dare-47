@@ -4,11 +4,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StandardEnemy : MonoBehaviour
 {
     public int MaxHealth = 100;
     public Transform OnDeathSpawn;
+    public UnityEvent OnDieEvent;
 
     int _currentHealth;
     Animator _animator;
@@ -39,6 +41,11 @@ public class StandardEnemy : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} died.");
         _animator.SetBool("IsDead", true);
+
+        if (OnDieEvent != null)
+        {
+            OnDieEvent.Invoke();
+        }
 
         Instantiate(OnDeathSpawn, transform.position, Quaternion.identity);
 
