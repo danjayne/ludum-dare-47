@@ -1,4 +1,5 @@
-﻿using Pathfinding;
+﻿using Assets.Scripts;
+using Pathfinding;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -28,9 +29,9 @@ public class StandardEnemy : MonoBehaviour
         _animator.SetTrigger("Hurt");
 
         if (_currentHealth <= 0)
-        {
             Die();
-        }
+        else
+            PlayHurtSound(gameObject);
     }
 
     private void Die()
@@ -40,5 +41,31 @@ public class StandardEnemy : MonoBehaviour
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+    }
+
+    /// <summary>
+    /// Currently duplicate of DestroyOnExit.PlayDeathSound
+    /// </summary>
+    /// <param name="destroyThis"></param>
+    private static void PlayHurtSound(GameObject destroyThis)
+    {
+        switch (Utils.PrefabName(destroyThis))
+        {
+            case "Cauldron":
+                AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.Cauldron);
+                break;
+            case "Frankensteins-monster":
+                AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.FrankensteinHurt);
+                break;
+            case "Ghost":
+                AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.GhostHurt);
+                break;
+            case "Spider":
+                AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.SpiderHurt);
+                break;
+            case "Witch":
+                AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.WitchHurt);
+                break;
+        }
     }
 }

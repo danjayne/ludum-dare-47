@@ -55,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
         if (CollidedWithObjectPlayerIsHurtBy(c) && _TimeSinceLastHurt >= _DelayBeforeNextHurt)
         {
             // We've entered the fire/spike etc
+            AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.ArthurHurtByFire);
             TakeDamage(HurtByCollisionDamage);
             _TimeSinceLastHurt = 0f;
         }
