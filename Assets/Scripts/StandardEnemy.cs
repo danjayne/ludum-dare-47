@@ -48,7 +48,7 @@ public class StandardEnemy : MonoBehaviour
     /// </summary>
     public void PlayHurtSound(bool die)
     {
-        switch (Utils.PrefabName(gameObject))
+        switch (gameObject.tag)
         {
             case "Cauldron":
                 if (die)
