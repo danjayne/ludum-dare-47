@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 108043462}
   - component: {fileID: 108043464}
   - component: {fileID: 108043463}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundTile (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1780,7 +1780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264373049}
   - component: {fileID: 264373050}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2518,7 +2518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 376572146}
   - component: {fileID: 376572147}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5052,7 +5052,7 @@ GameObject:
   m_Component:
   - component: {fileID: 757865009}
   - component: {fileID: 757865010}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5817,7 +5817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 892577423}
   - component: {fileID: 892577424}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6054,7 +6054,7 @@ GameObject:
   - component: {fileID: 913222170}
   - component: {fileID: 913222169}
   - component: {fileID: 913222168}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Platform_Wood_Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6627,7 +6627,7 @@ GameObject:
   - component: {fileID: 1008864336}
   - component: {fileID: 1008864338}
   - component: {fileID: 1008864337}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundTile (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7393,7 +7393,7 @@ GameObject:
   - component: {fileID: 1147597137}
   - component: {fileID: 1147597139}
   - component: {fileID: 1147597138}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundTile (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8368,7 +8368,7 @@ GameObject:
   - component: {fileID: 1235279970}
   - component: {fileID: 1235279969}
   - component: {fileID: 1235279968}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Platform_Uncolored_Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9187,7 +9187,7 @@ GameObject:
   - component: {fileID: 1310091388}
   - component: {fileID: 1310091387}
   - component: {fileID: 1310091386}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Platform_Uncolored_Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9536,7 +9536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1332566555}
   - component: {fileID: 1332566556}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10946,7 +10946,7 @@ GameObject:
   - component: {fileID: 1457995820}
   - component: {fileID: 1457995819}
   - component: {fileID: 1457995818}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Platform_Uncolored_Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11074,7 +11074,7 @@ GameObject:
   - component: {fileID: 1460074420}
   - component: {fileID: 1460074422}
   - component: {fileID: 1460074421}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundTile (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12493,7 +12493,7 @@ GameObject:
   - component: {fileID: 1681409399}
   - component: {fileID: 1681409398}
   - component: {fileID: 1681409397}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Platform_Wood_Wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12971,7 +12971,7 @@ GameObject:
   - component: {fileID: 1739849143}
   - component: {fileID: 1739849145}
   - component: {fileID: 1739849144}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundTile (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13347,7 +13347,7 @@ GameObject:
   - component: {fileID: 1813557375}
   - component: {fileID: 1813557377}
   - component: {fileID: 1813557376}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundTile (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13683,7 +13683,7 @@ GameObject:
   - component: {fileID: 1863918295}
   - component: {fileID: 1863918297}
   - component: {fileID: 1863918296}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundTile (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13954,6 +13954,92 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b250aa08a36ed1e428f5315c3f6f3aaa, type: 3}
+--- !u!1 &1891066817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1891066819}
+  - component: {fileID: 1891066818}
+  m_Layer: 5
+  m_Name: AStar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1891066818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891066817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAAAAIew6NkoxcgIAABcFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxDTaht9YhpId8TGgnF1+EtcYaZMkjyQGS4b93JdvYpXBA7MfTe2/X/iJcmhpyq/RGc/akGJDvE+LO5NtkSD7Cie6V3PJP6GveObOlK6K+5o1arjAeujajKrCa5z/kXrjiAION5IXS1ZrtIVXGGgwXVBjAlFbWdUsMfU3ICX+mK9dyxlO0dKdPPK2CyQWPOUgLeihNolmSrFbJctl1LGZRMo/iZBGup+Gia54uZiv/iSOP0shc0KoG5iQNYOFi3qGEoa+TqLYrccpyJQQ3HVViz7W3IqW1aVAoFjBOUbrnF84cVgl8X1onZNz+UhQGbOeMpud7rtHDFpf8VK2xFTWHltoHFY27aR5EwZ3n1cI+/VcxbWkXWlWP/c1h4G6xJc8Pb/ScU2NH3o/D9yPy3qMjFQe6E/BegnxWG60ayTBpdeNaGwPR/fD3Ki4tIT8M8ZbqTbCpB9P7UfeDdhouXv8pFbzaudRs0Qa2QnnP/X6Axun8QsJ+e0wHgVHH4o+B33Q/XrMu8cC1sZjqVEpHb6ca7UrJ2nvm1DQ2VVqCD3eka5BU2PMrwtjbId7kRtfeZB6oe6C6y7tc/5zctPjwUB8EN6lXdbwOy5Tq+ASmfGms4BIG0i7xjD6lSsp2x8ae9G3bRhc0H7XtG87+XS1CYxpG0SoIk6SIgyiZ0pjNY3YX7/C7Wi5z4nePS9RJxWtLtLMHpyYHcIl71r9nJhtNa7/vTNPjhn9WamQ5l4Xa5hpAvrQIV+Kg8RJ8MtmacTRoC9Zy6edNvjIiVH4All2BMq90fbKaZgNKRmr+oayLZCT1L5aMXMjlL1BLAwQUAAAICAAAACHshBXCkmwAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0UqJpoqGRkaWBoZlZmqmBkZluommKsWmKhWkSEFqamycrxQLVl1QWpPol5qZC9AQklmSkZealZOal67kXZaa4g4xWiq0FAFBLAQItABQAAAgIAAAAIew6NkoxcgIAABcFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAAIeyEFcKSbAAAAHgAAAAJACQAAAAAAAAAAAAAAL8CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAdgMAAAAA
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 1
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+--- !u!4 &1891066819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891066817}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1892242325
 GameObject:
   m_ObjectHideFlags: 0
@@ -14140,7 +14226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1917403599}
   - component: {fileID: 1917403600}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15035,7 +15121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2004112125}
   - component: {fileID: 2004112126}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15902,7 +15988,7 @@ GameObject:
   - component: {fileID: 2103321632}
   - component: {fileID: 2103321634}
   - component: {fileID: 2103321633}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundTile (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
