@@ -38,6 +38,7 @@ namespace Assets.Scripts
                     AudioManager.Instance.PlaySoundEffect(DrinkSoundEffect, 2f);
                 
                 PlayerHealth.Instance.TakeDamage(-HealthEffector);
+
                 gameObject.SetActive(false);
                 Destroy(gameObject);
             }
