@@ -33,7 +33,8 @@ public class PlayerInput : MonoBehaviour
         if (PlayerHealth.Instance.IsDead)
             return;
 
-        float worldBottom = -6f;
+        // HACK: Fix this
+        float worldBottom = -100f;
         if (transform.position.y < worldBottom)
             PlayerHealth.Instance.TakeDamage(999);
 

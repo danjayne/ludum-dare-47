@@ -102,7 +102,7 @@ public class AudioManager : MonoBehaviour
     {
         switch (soundEffect)
         {
-            case SoundEffectEnum.ArthurHurt: return "arthur-burnt-by-fire";
+            case SoundEffectEnum.ArthurHurt: return "arthur-hurt-2";
             case SoundEffectEnum.ArthurHurtByFire: return "arthur-burnt-by-fire";
             case SoundEffectEnum.ArthurHelmetClosing: return "helmet-closing";
             case SoundEffectEnum.Cauldron: return "magic-cauldron";
@@ -131,6 +131,7 @@ public class AudioManager : MonoBehaviour
 
 public enum SoundEffectEnum
 {
+    None,
     ArthurHurt,
     ArthurHurtByFire,
     ArthurHelmetClosing,

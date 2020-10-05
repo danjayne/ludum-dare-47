@@ -90,6 +90,8 @@ public class PlayerHealth : MonoBehaviour
         _Animator.SetBool("IsDead", true);
         IsDead = true;
 
+        AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.ArthurHurt, 3f);
+
         Invoke("Restart", 3f);
     }
 
