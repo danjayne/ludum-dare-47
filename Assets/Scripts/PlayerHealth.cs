@@ -6,24 +6,42 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    #region "Singleton"
+
+    private static PlayerHealth _instance;
+
+    public static PlayerHealth Instance => _instance;
+
+    private void Awake()
+    {
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+
+    }
+
+    #endregion
+
     public int MaxHealth = 100;
     public HealthBar HealthBar;
     public LayerMask HurtBy;
     public int HurtByCollisionDamage = 10;
+    public int CurrentHealth = 0;
+    public bool IsDead;
 
     private float _TimeSinceLastHurt;
     private float _DelayBeforeNextHurt = 5f;
-    private int _CurrentHealth = 0;
     private Animator _Animator;
-
-    private void Awake()
-    {
-        _Animator = GetComponent<Animator>();
-    }
 
     private void Start()
     {
-        _CurrentHealth = MaxHealth;
+        _Animator = GetComponent<Animator>();
+        CurrentHealth = MaxHealth;
         HealthBar.SetMaxHealth(MaxHealth);
     }
 
@@ -50,17 +68,17 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _CurrentHealth -= damage;
+        CurrentHealth -= damage;
 
         _Animator.SetTrigger("Hurt");
 
-        if (_CurrentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             Die(); // or game over
         }
         else
         {
-            HealthBar.SetHealth(_CurrentHealth);
+            HealthBar.SetHealth(CurrentHealth);
         }
     }
 
@@ -68,5 +86,6 @@ public class PlayerHealth : MonoBehaviour
     {
         HealthBar.SetHealth(0);
         _Animator.SetBool("IsDead", true);
+        IsDead = true;
     }
 }

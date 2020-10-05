@@ -3280,7 +3280,7 @@ Transform:
   - {fileID: 1661570171}
   - {fileID: 880038734}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &515313560 stripped
 Transform:
@@ -3427,7 +3427,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -3638,7 +3638,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &572237159 stripped
 Transform:
@@ -5591,7 +5591,7 @@ Transform:
   - {fileID: 2146038536}
   - {fileID: 1720166679}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &845400104 stripped
 Transform:
@@ -6820,7 +6820,7 @@ RectTransform:
   - {fileID: 167453298}
   - {fileID: 1717926574}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6859,6 +6859,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1497050549}
     m_Modifications:
+    - target: {fileID: 526138085, guid: 06675f807f7b12f4f9840407c4fb8e8b, type: 3}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 1290067151}
+    - target: {fileID: 526138087, guid: 06675f807f7b12f4f9840407c4fb8e8b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 526138087, guid: 06675f807f7b12f4f9840407c4fb8e8b, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2111889582151027016, guid: 06675f807f7b12f4f9840407c4fb8e8b, type: 3}
       propertyPath: m_Name
       value: Frankensteins-monster
@@ -7365,7 +7377,7 @@ Transform:
   - {fileID: 1791485482}
   - {fileID: 430524429}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1116595282 stripped
 Transform:
@@ -8989,6 +9001,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5386655340244787424, guid: c00b35c84e6c7bc4a972d2753e73ee08, type: 3}
   m_PrefabInstance: {fileID: 833737820}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1290067151 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5934389025166143750, guid: 7e4709bb42180784eb193b0208c9d29b, type: 3}
+  m_PrefabInstance: {fileID: 5934389024033840132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1295831975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10443,7 +10460,7 @@ Transform:
   - {fileID: 764154386}
   - {fileID: 384855872}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1413783126
 GameObject:
@@ -10677,7 +10694,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1433191471
 PrefabInstance:
@@ -13076,6 +13093,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1670757473}
     m_Modifications:
+    - target: {fileID: 526138085, guid: 06675f807f7b12f4f9840407c4fb8e8b, type: 3}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 1290067151}
+    - target: {fileID: 526138087, guid: 06675f807f7b12f4f9840407c4fb8e8b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 526138087, guid: 06675f807f7b12f4f9840407c4fb8e8b, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2111889582151027016, guid: 06675f807f7b12f4f9840407c4fb8e8b, type: 3}
       propertyPath: m_Name
       value: Frankensteins-monster
@@ -13965,7 +13994,7 @@ GameObject:
   - component: {fileID: 1891066819}
   - component: {fileID: 1891066818}
   m_Layer: 5
-  m_Name: AStar
+  m_Name: A*
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13985,7 +14014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAAIew6NkoxcgIAABcFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxDTaht9YhpId8TGgnF1+EtcYaZMkjyQGS4b93JdvYpXBA7MfTe2/X/iJcmhpyq/RGc/akGJDvE+LO5NtkSD7Cie6V3PJP6GveObOlK6K+5o1arjAeujajKrCa5z/kXrjiAION5IXS1ZrtIVXGGgwXVBjAlFbWdUsMfU3ICX+mK9dyxlO0dKdPPK2CyQWPOUgLeihNolmSrFbJctl1LGZRMo/iZBGup+Gia54uZiv/iSOP0shc0KoG5iQNYOFi3qGEoa+TqLYrccpyJQQ3HVViz7W3IqW1aVAoFjBOUbrnF84cVgl8X1onZNz+UhQGbOeMpud7rtHDFpf8VK2xFTWHltoHFY27aR5EwZ3n1cI+/VcxbWkXWlWP/c1h4G6xJc8Pb/ScU2NH3o/D9yPy3qMjFQe6E/BegnxWG60ayTBpdeNaGwPR/fD3Ki4tIT8M8ZbqTbCpB9P7UfeDdhouXv8pFbzaudRs0Qa2QnnP/X6Axun8QsJ+e0wHgVHH4o+B33Q/XrMu8cC1sZjqVEpHb6ca7UrJ2nvm1DQ2VVqCD3eka5BU2PMrwtjbId7kRtfeZB6oe6C6y7tc/5zctPjwUB8EN6lXdbwOy5Tq+ASmfGms4BIG0i7xjD6lSsp2x8ae9G3bRhc0H7XtG87+XS1CYxpG0SoIk6SIgyiZ0pjNY3YX7/C7Wi5z4nePS9RJxWtLtLMHpyYHcIl71r9nJhtNa7/vTNPjhn9WamQ5l4Xa5hpAvrQIV+Kg8RJ8MtmacTRoC9Zy6edNvjIiVH4All2BMq90fbKaZgNKRmr+oayLZCT1L5aMXMjlL1BLAwQUAAAICAAAACHshBXCkmwAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0UqJpoqGRkaWBoZlZmqmBkZluommKsWmKhWkSEFqamycrxQLVl1QWpPol5qZC9AQklmSkZealZOal67kXZaa4g4xWiq0FAFBLAQItABQAAAgIAAAAIew6NkoxcgIAABcFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAAIeyEFcKSbAAAAHgAAAAJACQAAAAAAAAAAAAAAL8CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAdgMAAAAA
+    dataString: UEsDBBQAAAgIAAAAIezfQX4CcQIAABgFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE2TojAQ/StWzqsFKDjubZdxnD3MR427NRcukTSSMiRUEkadKf/7dgII6+KB2J/vve7wRbg0NeRW6Y3m7EkxIN8nxJ3Jt8ngfIQT3Su55Z/Qx7xzZksXRH3MG7VcoT10aUZVYDXPf8i9cMEBGhvJC6WrNdtDqow1aC6oMIAurazLlmj6mpATvqYrl3LGU7R0p088rYLJBY85SAt6CE2iWZKsVsly2WUsZlEyj+JkEa6n4aJLni5mK//Eka/SyFzQqgbmKA3FwsW8qxKGPk4i2y7EMcuVENx0UIk9116KlNamQaIYwDhF6h5fOHO1SuD70joi4/SXojBgO2U0Pd9zjRq2dclP1QpbUXNooX1Q0bhO8yAK7jyutuzTfxHTFnahVfXYdw4D18WWPD+80XNOjR1pPzbfj8B7jY5UHOhOwHsJ8llttGokQ6fVjUttDET3w98rubSE/DDYW6g3xqYeRO9H3Q/acbh4/qdU8GrnXLNFa9gK5TX3+wEap/MLAfvtMV0JtDoUfwz8pvvxmnWOB66NRVfHUjp4O9VoF0rWXjPHprGp0hK8uQNdg6TCnl+xjL0d4o1v1PbG80Ddheqad77+ntykePMQHwQ3rld1vA7LlOr4BKZ8aazgEgbQzvGMOqVKynbHxpr0adtGFzQfpe0bzv5dLUJjGkbRKgiTpIiDKJnSmM1jdhfv8LdaLnPid49L5EnFawu0kwenJofiEves/85MNprWft+ZpscN/6zUGCCXhdrmGkC+tCWuyEFjF7yabM04KrQFa7n0AydfGREqPwDLrj0zT3V9sppmQ5WM1PxDWWfJSOq/LBm5kMtfUEsDBBQAAAgIAAAAIeyEFcKSbAAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrRSommioZGRpYGhmVmaqYGRmW6iaYqxaYqFaRIQWpqbJyvFAtWXVBak+iXmpkL0BCSWZKRl5qVk5qXruRdlpriDjFaKrQUAUEsBAi0AFAAACAgAAAAh7N9BfgJxAgAAGAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAAh7IQVwpJsAAAAeAAAAAkAJAAAAAAAAAAAAAAAvgIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAAB1AwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -13998,7 +14027,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -14017,7 +14046,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
@@ -14038,7 +14067,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1892242325
 GameObject:
@@ -14105,7 +14134,7 @@ Transform:
   m_Children:
   - {fileID: 1387939540}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1914434097
 GameObject:
@@ -16671,6 +16700,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 902181893}
     m_Modifications:
+    - target: {fileID: 526138085, guid: 06675f807f7b12f4f9840407c4fb8e8b, type: 3}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 1290067151}
+    - target: {fileID: 526138087, guid: 06675f807f7b12f4f9840407c4fb8e8b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 526138087, guid: 06675f807f7b12f4f9840407c4fb8e8b, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2111889582151027016, guid: 06675f807f7b12f4f9840407c4fb8e8b, type: 3}
       propertyPath: m_Name
       value: Frankensteins-monster
@@ -17066,7 +17107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5934389025166143750, guid: 7e4709bb42180784eb193b0208c9d29b, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5934389025166143750, guid: 7e4709bb42180784eb193b0208c9d29b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

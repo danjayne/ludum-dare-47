@@ -30,11 +30,17 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
+        if (PlayerHealth.Instance.IsDead)
+            return;
+
         ReadPlayerInputs();
     }
 
     void FixedUpdate()
     {
+        if (PlayerHealth.Instance.IsDead)
+            return;
+
         // Move our character
         CController.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump, dash);
         jump = false;
