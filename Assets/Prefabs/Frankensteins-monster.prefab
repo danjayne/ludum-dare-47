@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 300
+  OnDeathSpawn: {fileID: 3210961398306620863, guid: 67aadfc28d273c74595d7f74bf3dc099, type: 3}
 --- !u!114 &3790581838979386201
 MonoBehaviour:
   m_ObjectHideFlags: 0

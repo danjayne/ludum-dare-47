@@ -133,3 +133,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+  OnDeathSpawn: {fileID: 7351255264613504484, guid: 94f27aa7f559e1d43993ef9e14b99b95, type: 3}

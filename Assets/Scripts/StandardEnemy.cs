@@ -8,6 +8,7 @@ using UnityEngine;
 public class StandardEnemy : MonoBehaviour
 {
     public int MaxHealth = 100;
+    public Transform OnDeathSpawn;
 
     int _currentHealth;
     Animator _animator;
@@ -38,6 +39,8 @@ public class StandardEnemy : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} died.");
         _animator.SetBool("IsDead", true);
+
+        Instantiate(OnDeathSpawn, transform.position, Quaternion.identity);
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
