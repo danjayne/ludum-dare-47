@@ -14,6 +14,7 @@ public class CharacterController2D : MonoBehaviour
 
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool m_Grounded;            // Whether or not the player is grounded.
+    private float m_TimeSinceJump;
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
@@ -32,7 +33,6 @@ public class CharacterController2D : MonoBehaviour
     private bool m_wasCrouching = false;
 
     public UnityEvent OnDashEvent;
-    private bool _isJumping;
 
     private void Awake()
     {
@@ -50,6 +50,8 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        m_TimeSinceJump += Time.deltaTime;
+
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
 
@@ -61,11 +63,10 @@ public class CharacterController2D : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
-                if (!wasGrounded)
+                if (!wasGrounded && m_TimeSinceJump > .1)
                 {
                     OnLandEvent.Invoke();
-                    _isJumping = false;
-                }    
+                }
             }
         }
     }
@@ -139,13 +140,13 @@ public class CharacterController2D : MonoBehaviour
         {
             // Add a vertical force to the player.
             m_Grounded = false;
-            _isJumping = true;
+            m_TimeSinceJump = 0f;
             m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
         }
 
         if (dash)
         {
-            m_Grounded = false;
+            //m_Grounded = false;
             var dashForce = m_JumpForce * _DashMultiplier;
             m_Rigidbody2D.AddForce(new Vector2(m_FacingRight ? dashForce : -dashForce, 0f));
             OnDashEvent.Invoke();
