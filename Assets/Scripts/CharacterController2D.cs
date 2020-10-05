@@ -54,12 +54,16 @@ public class CharacterController2D : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerHealth.Instance.IsDead)
-            this.enabled = false;
+        
+
+        //if (PlayerHealth.Instance.IsDead)
+        //    this.enabled = false;
     }
 
     private void FixedUpdate()
     {
+        
+
         m_TimeSinceJump += Time.deltaTime;
 
         bool wasGrounded = m_Grounded;

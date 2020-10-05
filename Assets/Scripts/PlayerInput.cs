@@ -30,8 +30,10 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerHealth.Instance.IsDead)
-            this.enabled = false;
+        
+
+        //if (PlayerHealth.Instance.IsDead)
+        //    this.enabled = false;
 
         // HACK: Fix this
         float worldBottom = -100f;
@@ -43,6 +45,8 @@ public class PlayerInput : MonoBehaviour
 
     void FixedUpdate()
     {
+        
+
         // Move our character
         CController.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump, dash);
         jump = false;

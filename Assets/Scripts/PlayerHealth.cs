@@ -48,11 +48,15 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
+        
+
         _TimeSinceLastHurt += Time.deltaTime;
     }
 
     private void OnCollisionStay2D(Collision2D c)
     {
+        
+
         if (CollidedWithObjectPlayerIsHurtBy(c) && _TimeSinceLastHurt >= _DelayBeforeNextHurt)
         {
             // We've entered the fire/spike etc
@@ -86,14 +90,20 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
+        IsDead = true;
+        //gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        //gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        gameObject.GetComponent<CharacterController2D>().enabled = false;
+        gameObject.GetComponent<PlayerInput>().enabled = false;
+        gameObject.GetComponent<Rigidbody2D>().velocity= Vector2.zero;
+
         HealthBar.SetHealth(0);
         CameraManager.Instance.PlayDeathCameraScene();
         AudioManager.Instance.PlayMusic(MusicEnum.WitchMusic);
         AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.ArthurHurt, 3f);
         _Animator.SetBool("IsDead", true);
 
-        IsDead = true;
-
+        //Destroy(gameObject.GetComponent<Rigidbody2D>());
         Invoke("Restart", 10f);
     }
 
