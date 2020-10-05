@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -88,5 +89,12 @@ public class PlayerHealth : MonoBehaviour
         HealthBar.SetHealth(0);
         _Animator.SetBool("IsDead", true);
         IsDead = true;
+
+        Invoke("Restart", 3f);
+    }
+
+    private void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

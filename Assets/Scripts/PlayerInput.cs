@@ -33,6 +33,10 @@ public class PlayerInput : MonoBehaviour
         if (PlayerHealth.Instance.IsDead)
             return;
 
+        float worldBottom = -6f;
+        if (transform.position.y < worldBottom)
+            PlayerHealth.Instance.TakeDamage(999);
+
         ReadPlayerInputs();
     }
 
