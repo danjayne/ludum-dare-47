@@ -25,7 +25,7 @@ namespace Assets.Scripts
             if (Time.time == 0)
                 curveTime = 0f;
 
-            transform.position = new Vector3(transform.position.x, myCurve.Evaluate(curveTime) + _OriginalPosition.y, transform.position.z);
+            //transform.position = new Vector3(transform.position.x, myCurve.Evaluate(curveTime) + _OriginalPosition.y, transform.position.z);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -38,6 +38,7 @@ namespace Assets.Scripts
                     AudioManager.Instance.PlaySoundEffect(DrinkSoundEffect, 2f);
                 
                 PlayerHealth.Instance.TakeDamage(-HealthEffector);
+                gameObject.SetActive(false);
                 Destroy(gameObject);
             }
         }

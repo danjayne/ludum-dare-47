@@ -52,6 +52,12 @@ public class CharacterController2D : MonoBehaviour
             OnCrouchEvent = new BoolEvent();
     }
 
+    private void Update()
+    {
+        if (PlayerHealth.Instance.IsDead)
+            this.enabled = false;
+    }
+
     private void FixedUpdate()
     {
         m_TimeSinceJump += Time.deltaTime;
@@ -153,6 +159,7 @@ public class CharacterController2D : MonoBehaviour
             // Add a vertical force to the player.
             m_Grounded = false;
             m_TimeSinceJump = 0f;
+            AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.Jump);
             m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
         }
 
@@ -160,6 +167,7 @@ public class CharacterController2D : MonoBehaviour
         {
             //m_Grounded = false;
             var dashForce = m_JumpForce * _DashMultiplier;
+            AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.Dash);
             m_Rigidbody2D.AddForce(new Vector2(m_FacingRight ? dashForce : -dashForce, 0f));
             OnDashEvent.Invoke();
         }

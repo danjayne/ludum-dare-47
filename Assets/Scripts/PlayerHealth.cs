@@ -87,16 +87,19 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         HealthBar.SetHealth(0);
+        CameraManager.Instance.PlayDeathCameraScene();
+        AudioManager.Instance.PlayMusic(MusicEnum.WitchMusic);
+        AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.ArthurHurt, 3f);
         _Animator.SetBool("IsDead", true);
+
         IsDead = true;
 
-        AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.ArthurHurt, 3f);
-
-        Invoke("Restart", 3f);
+        Invoke("Restart", 10f);
     }
 
     private void Restart()
     {
+        CameraManager.Instance.ResetCamera();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

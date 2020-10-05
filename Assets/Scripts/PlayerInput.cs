@@ -31,7 +31,7 @@ public class PlayerInput : MonoBehaviour
     private void Update()
     {
         if (PlayerHealth.Instance.IsDead)
-            return;
+            this.enabled = false;
 
         // HACK: Fix this
         float worldBottom = -100f;
@@ -43,13 +43,15 @@ public class PlayerInput : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PlayerHealth.Instance.IsDead)
-            return;
-
         // Move our character
         CController.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump, dash);
         jump = false;
         dash = false;
+    }
+
+    public void HelmetShut()
+    {
+        AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.ArthurHelmetClosing);
     }
 
     private void ReadPlayerInputs()
@@ -115,6 +117,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Stab()
     {
+        AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.Stab);
         Animator.SetTrigger("Attack2");
         var hits = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange, EnemyLayers);
 
@@ -126,6 +129,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Slash()
     {
+        AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.Slash1);
         Animator.SetTrigger("Attack1");
         var hits = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange, EnemyLayers);
 

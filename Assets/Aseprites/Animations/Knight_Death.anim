@@ -21,25 +21,25 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 58872186761109989, guid: cef74e1a98c685a4b9841047a109f060, type: 3}
-    - time: 0.2
-      value: {fileID: 838480372547558991, guid: cef74e1a98c685a4b9841047a109f060, type: 3}
-    - time: 0.3
-      value: {fileID: -6273970348934240039, guid: cef74e1a98c685a4b9841047a109f060, type: 3}
-    - time: 0.5
-      value: {fileID: -8909586029580501290, guid: cef74e1a98c685a4b9841047a109f060, type: 3}
-    - time: 0.7
-      value: {fileID: 345077958306479709, guid: cef74e1a98c685a4b9841047a109f060, type: 3}
     - time: 1
-      value: {fileID: -622389393373308816, guid: cef74e1a98c685a4b9841047a109f060, type: 3}
+      value: {fileID: 838480372547558991, guid: cef74e1a98c685a4b9841047a109f060, type: 3}
     - time: 1.5
+      value: {fileID: -6273970348934240039, guid: cef74e1a98c685a4b9841047a109f060, type: 3}
+    - time: 2.5
+      value: {fileID: -8909586029580501290, guid: cef74e1a98c685a4b9841047a109f060, type: 3}
+    - time: 3.5
+      value: {fileID: 345077958306479709, guid: cef74e1a98c685a4b9841047a109f060, type: 3}
+    - time: 5
+      value: {fileID: -622389393373308816, guid: cef74e1a98c685a4b9841047a109f060, type: 3}
+    - time: 7.5
       value: {fileID: 6206458973734138496, guid: cef74e1a98c685a4b9841047a109f060, type: 3}
-    - time: 1.8833333
+    - time: 9.416667
       value: {fileID: 6206458973734138496, guid: cef74e1a98c685a4b9841047a109f060, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 60
+  m_SampleRate: 12
   m_WrapMode: 2
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -67,7 +67,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.9
+    m_StopTime: 9.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -86,4 +86,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 7.5
+    functionName: HelmetShut
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
