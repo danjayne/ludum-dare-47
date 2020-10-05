@@ -137,6 +137,15 @@ TextureImporter:
   - first:
       213: 9193252067758013161
     second: Knight 44
+  - first:
+      213: -8832326694010819453
+    second: Knight 45
+  - first:
+      213: 8096538419918751758
+    second: Knight 46
+  - first:
+      213: 7374042850818079460
+    second: Knight 47
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -198,7 +207,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 160
+    maxTextureSize: 224
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -216,7 +225,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 7
@@ -237,7 +246,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 7
@@ -258,7 +267,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 7
@@ -278,8 +287,8 @@ TextureImporter:
       name: Knight 3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 128
+        x: 96
+        y: 160
         width: 32
         height: 32
       alignment: 7
@@ -299,8 +308,8 @@ TextureImporter:
       name: Knight 4
       rect:
         serializedVersion: 2
-        x: 96
-        y: 128
+        x: 128
+        y: 160
         width: 32
         height: 32
       alignment: 7
@@ -320,8 +329,8 @@ TextureImporter:
       name: Knight 5
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
+        x: 160
+        y: 160
         width: 32
         height: 32
       alignment: 7
@@ -341,8 +350,8 @@ TextureImporter:
       name: Knight 6
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
+        x: 192
+        y: 160
         width: 32
         height: 32
       alignment: 7
@@ -404,8 +413,8 @@ TextureImporter:
       name: Knight 9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
+        x: 64
+        y: 128
         width: 32
         height: 32
       alignment: 7
@@ -425,8 +434,8 @@ TextureImporter:
       name: Knight 10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
+        x: 96
+        y: 128
         width: 32
         height: 32
       alignment: 7
@@ -446,8 +455,8 @@ TextureImporter:
       name: Knight 11
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
+        x: 128
+        y: 128
         width: 32
         height: 32
       alignment: 7
@@ -467,7 +476,7 @@ TextureImporter:
       name: Knight 12
       rect:
         serializedVersion: 2
-        x: 32
+        x: 160
         y: 128
         width: 32
         height: 32
@@ -488,7 +497,7 @@ TextureImporter:
       name: Knight 13
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 128
         width: 32
         height: 32
@@ -509,7 +518,7 @@ TextureImporter:
       name: Knight 14
       rect:
         serializedVersion: 2
-        x: 0
+        x: 192
         y: 128
         width: 32
         height: 32
@@ -530,8 +539,8 @@ TextureImporter:
       name: Knight 15
       rect:
         serializedVersion: 2
-        x: 32
-        y: 128
+        x: 0
+        y: 96
         width: 32
         height: 32
       alignment: 7
@@ -551,7 +560,7 @@ TextureImporter:
       name: Knight 16
       rect:
         serializedVersion: 2
-        x: 96
+        x: 32
         y: 96
         width: 32
         height: 32
@@ -572,8 +581,8 @@ TextureImporter:
       name: Knight 17
       rect:
         serializedVersion: 2
-        x: 128
-        y: 96
+        x: 0
+        y: 128
         width: 32
         height: 32
       alignment: 7
@@ -593,8 +602,8 @@ TextureImporter:
       name: Knight 18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 64
+        y: 96
         width: 32
         height: 32
       alignment: 7
@@ -614,7 +623,7 @@ TextureImporter:
       name: Knight 19
       rect:
         serializedVersion: 2
-        x: 32
+        x: 160
         y: 128
         width: 32
         height: 32
@@ -656,8 +665,8 @@ TextureImporter:
       name: Knight 21
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 96
+        y: 96
         width: 32
         height: 32
       alignment: 7
@@ -677,8 +686,8 @@ TextureImporter:
       name: Knight 22
       rect:
         serializedVersion: 2
-        x: 32
-        y: 128
+        x: 128
+        y: 96
         width: 32
         height: 32
       alignment: 7
@@ -698,8 +707,8 @@ TextureImporter:
       name: Knight 23
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 160
+        y: 96
         width: 32
         height: 32
       alignment: 7
@@ -719,8 +728,8 @@ TextureImporter:
       name: Knight 24
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 192
+        y: 96
         width: 32
         height: 32
       alignment: 7
@@ -740,8 +749,8 @@ TextureImporter:
       name: Knight 25
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
+        x: 160
+        y: 128
         width: 32
         height: 32
       alignment: 7
@@ -761,7 +770,7 @@ TextureImporter:
       name: Knight 26
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 64
         width: 32
         height: 32
@@ -782,8 +791,8 @@ TextureImporter:
       name: Knight 27
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 32
+        y: 64
         width: 32
         height: 32
       alignment: 7
@@ -803,8 +812,8 @@ TextureImporter:
       name: Knight 28
       rect:
         serializedVersion: 2
-        x: 32
-        y: 128
+        x: 192
+        y: 160
         width: 32
         height: 32
       alignment: 7
@@ -824,8 +833,8 @@ TextureImporter:
       name: Knight 29
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 32
+        y: 160
         width: 32
         height: 32
       alignment: 7
@@ -845,8 +854,8 @@ TextureImporter:
       name: Knight 30
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 64
+        y: 64
         width: 32
         height: 32
       alignment: 7
@@ -866,8 +875,8 @@ TextureImporter:
       name: Knight 31
       rect:
         serializedVersion: 2
-        x: 32
-        y: 128
+        x: 96
+        y: 64
         width: 32
         height: 32
       alignment: 7
@@ -887,8 +896,8 @@ TextureImporter:
       name: Knight 32
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 128
+        y: 64
         width: 32
         height: 32
       alignment: 7
@@ -908,8 +917,8 @@ TextureImporter:
       name: Knight 33
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 128
+        y: 64
         width: 32
         height: 32
       alignment: 7
@@ -929,8 +938,8 @@ TextureImporter:
       name: Knight 34
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
+        x: 160
+        y: 64
         width: 32
         height: 32
       alignment: 7
@@ -950,8 +959,8 @@ TextureImporter:
       name: Knight 35
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
+        x: 192
+        y: 64
         width: 32
         height: 32
       alignment: 7
@@ -971,7 +980,7 @@ TextureImporter:
       name: Knight 36
       rect:
         serializedVersion: 2
-        x: 96
+        x: 0
         y: 32
         width: 32
         height: 32
@@ -993,7 +1002,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 128
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -1013,8 +1022,8 @@ TextureImporter:
       name: Knight 38
       rect:
         serializedVersion: 2
-        x: 128
-        y: 32
+        x: 0
+        y: 128
         width: 32
         height: 32
       alignment: 7
@@ -1034,8 +1043,8 @@ TextureImporter:
       name: Knight 39
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 64
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -1055,8 +1064,8 @@ TextureImporter:
       name: Knight 40
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 96
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -1076,8 +1085,8 @@ TextureImporter:
       name: Knight 41
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 128
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -1097,8 +1106,8 @@ TextureImporter:
       name: Knight 42
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
+        x: 160
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -1118,8 +1127,8 @@ TextureImporter:
       name: Knight 43
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
+        x: 192
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -1139,7 +1148,7 @@ TextureImporter:
       name: Knight 44
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 0
         width: 32
         height: 32
@@ -1152,6 +1161,69 @@ TextureImporter:
       bones: []
       spriteID: 9ea77553c0ef49f70800000000000000
       internalID: 9193252067758013161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight 45
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38ce84fdaa54d6580800000000000000
+      internalID: -8832326694010819453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight 46
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e084f8dabceac5070800000000000000
+      internalID: 8096538419918751758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight 47
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea358947ecd55660800000000000000
+      internalID: 7374042850818079460
       vertices: []
       indices: 
       edges: []

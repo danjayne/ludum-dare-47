@@ -17208,6 +17208,10 @@ PrefabInstance:
       propertyPath: CountdownBar
       value: 
       objectReference: {fileID: 2859907077293947670}
+    - target: {fileID: 1149414657, guid: 7e4709bb42180784eb193b0208c9d29b, type: 3}
+      propertyPath: RunSpeed
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 1290067147, guid: 7e4709bb42180784eb193b0208c9d29b, type: 3}
       propertyPath: HealthBar
       value: 
