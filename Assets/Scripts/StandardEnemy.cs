@@ -31,7 +31,7 @@ public class StandardEnemy : MonoBehaviour
         if (_currentHealth <= 0)
             Die();
         else
-            PlayHurtSound(gameObject);
+            PlayHurtSound(false);
     }
 
     private void Die()
@@ -46,22 +46,24 @@ public class StandardEnemy : MonoBehaviour
     /// <summary>
     /// Currently duplicate of DestroyOnExit.PlayDeathSound
     /// </summary>
-    /// <param name="destroyThis"></param>
-    private static void PlayHurtSound(GameObject destroyThis)
+    public void PlayHurtSound(bool die)
     {
-        switch (Utils.PrefabName(destroyThis))
+        switch (Utils.PrefabName(gameObject))
         {
             case "Cauldron":
-                AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.Cauldron);
+                if (die)
+                    AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.SmashCauldron);
+                else
+                    AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.Cauldron, 1f);
                 break;
             case "Frankensteins-monster":
-                AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.FrankensteinHurt);
+                AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.FrankensteinHurt, .8f);
                 break;
             case "Ghost":
-                AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.GhostHurt);
+                AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.GhostHurt, 1f);
                 break;
             case "Spider":
-                AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.SpiderHurt);
+                AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.SpiderHurt, 2f);
                 break;
             case "Witch":
                 AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.WitchHurt);

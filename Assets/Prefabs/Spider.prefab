@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1795897871435049651}
   - component: {fileID: 1242330661589890177}
   - component: {fileID: 7513868492474492656}
-  m_Layer: 14
+  m_Layer: 9
   m_Name: Spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

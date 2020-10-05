@@ -32,6 +32,11 @@ public class AudioManager : MonoBehaviour
 
     private AudioSource _audioSource;
 
+    public void SetPitch(float pitch)
+    {
+        _audioSource.pitch = pitch;
+    }
+
     public void PlayMusic(MusicEnum music)
     {
         AudioClip audioClip = null;
@@ -62,7 +67,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySoundEffect(SoundEffectEnum soundEffect)
+    public void PlaySoundEffect(SoundEffectEnum soundEffect, float? volume = null)
     {
         AudioClip audioClip = null;
 
@@ -79,7 +84,7 @@ public class AudioManager : MonoBehaviour
         }
 
         if (audioClip != null) // what if something is currently playing? delay?
-            _audioSource.PlayOneShot(audioClip);
+            _audioSource.PlayOneShot(audioClip, volume ?? _audioSource.volume);
     }
 
     private string GetMusicFileName(MusicEnum music)

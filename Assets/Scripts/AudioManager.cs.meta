@@ -3,7 +3,9 @@ guid: 722eb5b85270ce3428a7fe1dcfc7fd44
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - BackgroundMusic: {fileID: 8300000, guid: f03c4da95725e3943b733760f193dd14, type: 3}
+  - WitchMusic: {fileID: 8300000, guid: 7d503fe64c0c8434e85288ac6387beb5, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
