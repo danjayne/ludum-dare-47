@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5934389024704092133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.068, y: 0.829, z: 0}
+  m_LocalPosition: {x: -0.068, y: 0.792, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5934389025166143750}
@@ -84,7 +84,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5934389025073635679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.087, y: 0.077, z: 0}
+  m_LocalPosition: {x: -0.087, y: 0.144, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5934389025166143750}
@@ -343,16 +343,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a065c0bcce6246546a4d28e25b47b0d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsInitializingActions: 0
-  _totalActionTime: 10
-  ElapsedMs: 0
-  _actionRecordingComplete: 0
-  _actionsActive: 0
-  ElapsedMsText: {fileID: 0}
-  ActionText: {fileID: 0}
   CController: {fileID: 5934389025166143747}
   Animator: {fileID: 5934389025166143756}
-  RunSpeed: 60
+  RunSpeed: 40
   SlashDamage: 20
   StabDamage: 40
   AttackPoint: {fileID: 1472056881}
@@ -378,3 +371,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16384
   HurtByCollisionDamage: 10
+  CurrentHealth: 0
+  IsDead: 0
