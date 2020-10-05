@@ -123,7 +123,7 @@ Transform:
   m_GameObject: {fileID: 5934389025166143748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.28, y: -2.92, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 5934389025073635672}
   - {fileID: 5934389024704092134}
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e30e9af13d50e40a74b33c44b99ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 800
+  m_JumpForce: 600
   m_CrouchSpeed: 0.35
   m_MovementSmoothing: 0.0185
   m_AirControl: 1
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CController: {fileID: 5934389025166143747}
   Animator: {fileID: 5934389025166143756}
-  RunSpeed: 40
+  RunSpeed: 30
   SlashDamage: 20
   StabDamage: 40
   AttackPoint: {fileID: 1472056881}

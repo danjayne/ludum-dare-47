@@ -10,36 +10,16 @@ public class StandardEnemy : MonoBehaviour
 
     int _currentHealth;
     Animator _animator;
-    //AIPath _aiPath;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        //_aiPath = GetComponent<AIPath>();
     }
 
     private void Start()
     {
         _currentHealth = MaxHealth;
     }
-
-    //private void Update()
-    //{
-    //    if (_aiPath != null)
-    //        RotateEnemyBasedOnAIPath();
-    //}
-
-    //private void RotateEnemyBasedOnAIPath()
-    //{
-    //    if (_aiPath.desiredVelocity.x >= 0.01f)
-    //    {
-    //        transform.localScale = new Vector3(-1f, 1f, 1f);
-    //    }
-    //    else if (_aiPath.desiredVelocity.x <= -0.01f)
-    //    {
-    //        transform.localScale = new Vector3(1f, 1f, 1f);
-    //    }
-    //}
 
     public void TakeDamage(int damage)
     {
