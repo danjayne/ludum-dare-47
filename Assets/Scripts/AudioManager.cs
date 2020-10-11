@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
 
     #endregion
 
+    [Header("Music Clips")]
     public AudioClip BackgroundMusic;
     public AudioClip WitchMusic;
 

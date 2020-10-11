@@ -28,15 +28,20 @@ public class PlayerHealth : MonoBehaviour
 
     #endregion
 
-    public int MaxHealth = 100;
+    [Header("UI")]
     public HealthBar HealthBar;
+
+    [Header("Collision")]
     public LayerMask HurtBy;
     public int HurtByCollisionDamage = 10;
+
+    [Header("Health")]
+    public int MaxHealth = 100;
     public int CurrentHealth = 0;
     public bool IsDead;
 
     private float _TimeSinceLastHurt;
-    private float _DelayBeforeNextHurt = 5f;
+    private float _DelayBeforeNextHurt = 0f;
     private Animator _Animator;
 
     private void Start()

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
+    [Header("Movement")]
     public float Speed = 5f;
     public float Distance = 2f;
+
+    [Header("Raycast")]
     public Transform Ground;
     public LayerMask EnvironmentMask;
 

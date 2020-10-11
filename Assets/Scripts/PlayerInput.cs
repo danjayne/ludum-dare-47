@@ -9,14 +9,17 @@ using UnityEngineInternal;
 
 public class PlayerInput : MonoBehaviour
 {
-    public CharacterController2D CController;
-    public Animator Animator;
-    public float RunSpeed = 40f;
+    [Header("Attacking")]
     public int SlashDamage = 20;
     public int StabDamage = 40;
     public Transform AttackPoint;
     public float AttackRange = 0.5f;
     public LayerMask EnemyLayers;
+
+    [Header("Movement & Animation")]
+    public float RunSpeed = 40f;
+    public CharacterController2D CController;
+    public Animator Animator;
 
     float horizontalMove = 0f;
     bool jump = false;

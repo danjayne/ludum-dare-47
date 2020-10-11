@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+    [Header("Tile Prefabs")]
     public Transform FloorTilePrefab;
     public Transform FireTilePrefab;
     public Transform BackgroundPrefab;
     public Transform TreePrefab;
     public Transform SpikeTilePrefab;
-    public Vector2 BottomLeftCoordinates;
 
+    [Header("Procedural Values")]
+    public Vector2 BottomLeftCoordinates;
     public const int numHorizontalTiles = 100;
 
     private List<PlatformComboEnum> platformCombos = new List<PlatformComboEnum>()

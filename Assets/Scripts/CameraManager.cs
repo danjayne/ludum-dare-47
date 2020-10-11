@@ -25,7 +25,10 @@ public class CameraManager : MonoBehaviour
 
     #endregion
 
+    [Header("Virtual Camera")]
     public CinemachineVirtualCamera _vCam;
+
+    [Header("Camera Sizes")]
     public float CameraSize_DeathScene = 1f;
     public float CameraSize = 3f;
 

@@ -8,7 +8,10 @@ using UnityEngine.Events;
 
 public class StandardEnemy : MonoBehaviour
 {
+    [Header("Health")]
     public int MaxHealth = 100;
+
+    [Header("Death")]
     public Transform OnDeathSpawn;
     public UnityEvent OnDieEvent;
 
