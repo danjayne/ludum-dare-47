@@ -14,13 +14,14 @@ public class Spider : MonoBehaviour
     public Transform Projectile;
     public float ProjectileForce = 10;
     public float MinPlayerDistanceFromSpider = 6f;
-    public float TimeSinceLastProjectile = 3f;
+    public float MaxTimeSinceLastProjectile = 3f;
 
     private Rigidbody2D rb;
-    private Vector3 direction;
+    private Vector3 objectDirection;
+    private Vector3 fireDirection;
     private bool fireProjectile;
     private Transform projectile;
-    private float timeSinceLastProjectile;
+    private float timeSinceLastProjectile = 3f;
 
     private void Start()
     {
@@ -31,11 +32,12 @@ public class Spider : MonoBehaviour
     {
         timeSinceLastProjectile += Time.deltaTime;
 
-        direction = Player.position - transform.position;
-        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+        objectDirection = Player.position - transform.position;
+        fireDirection = Player.position - FireLocation.position;
+        float angle = Mathf.Atan2(objectDirection.x, objectDirection.y) * Mathf.Rad2Deg;
         rb.rotation = RotationOffset.z - angle;
 
-        if (direction.magnitude < MinPlayerDistanceFromSpider && timeSinceLastProjectile > TimeSinceLastProjectile)
+        if (objectDirection.magnitude < MinPlayerDistanceFromSpider && timeSinceLastProjectile > MaxTimeSinceLastProjectile)
         {
             fireProjectile = true;
         }
@@ -48,7 +50,7 @@ public class Spider : MonoBehaviour
             projectile = Instantiate(Projectile, FireLocation);
             var prb = projectile.GetComponent<Rigidbody2D>();
             prb.velocity = Vector2.zero;
-            prb.AddForce(direction * ProjectileForce * Time.deltaTime, ForceMode2D.Impulse);
+            prb.AddForce(fireDirection * ProjectileForce * Time.deltaTime, ForceMode2D.Impulse);
 
             timeSinceLastProjectile = 0f;
             fireProjectile = false;
