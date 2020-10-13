@@ -15,6 +15,12 @@ public class PlayerInput : MonoBehaviour
     public Transform AttackPoint;
     public float AttackRange = 0.5f;
     public LayerMask EnemyLayers;
+    public float AttackCooldownTime = .5f;
+    private float TimeUntilNextAttack;
+
+    [Header("Dashing")]
+    public float DashCooldownTime = .5f;
+    private float TimeUntilNextDash;
 
     [Header("Movement & Animation")]
     public float RunSpeed = 40f;
@@ -28,12 +34,19 @@ public class PlayerInput : MonoBehaviour
 
     private void Start()
     {
+        TimeUntilNextAttack = 0f;
+        TimeUntilNextDash = 0f;
+
         Animator.SetBool("IsCrouching", false);
     }
 
     private void Update()
     {
-        
+        if (TimeUntilNextAttack > 0)
+            TimeUntilNextAttack -= Time.deltaTime;
+
+        if (TimeUntilNextDash > 0)
+            TimeUntilNextDash -= Time.deltaTime;
 
         //if (PlayerHealth.Instance.IsDead)
         //    this.enabled = false;
@@ -82,17 +95,20 @@ public class PlayerInput : MonoBehaviour
             Jump();
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0) && TimeUntilNextAttack <= 0)
         {
             Slash();
+            TimeUntilNextAttack = AttackCooldownTime;
         }
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetMouseButton(1) && TimeUntilNextAttack <= 0)
         {
             Stab();
+            TimeUntilNextAttack = AttackCooldownTime;
         }
-        else if (Input.GetKeyDown(KeyCode.LeftShift))
+        else if (Input.GetKeyDown(KeyCode.LeftShift) && TimeUntilNextDash <= 0)
         {
             Dash();
+            TimeUntilNextDash = DashCooldownTime;
         }
     }
 
