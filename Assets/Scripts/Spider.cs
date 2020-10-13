@@ -7,7 +7,7 @@ public class Spider : MonoBehaviour
 {
     [Header("Player Follow")]
     public Transform Player;
-    public Vector3 RotationOffset = new Vector3(0,0,-120);
+    public Vector3 RotationOffset = new Vector3(0, 0, -120);
 
     [Header("Projectile")]
     public Transform FireLocation;
@@ -16,17 +16,11 @@ public class Spider : MonoBehaviour
     public float MinPlayerDistanceFromSpider = 6f;
     public float MaxTimeSinceLastProjectile = 3f;
 
-    private Rigidbody2D rb;
     private Vector3 objectDirection;
     private Vector3 fireDirection;
     private bool fireProjectile;
     private Transform projectile;
     private float timeSinceLastProjectile = 3f;
-
-    private void Start()
-    {
-        rb = this.GetComponent<Rigidbody2D>();
-    }
 
     private void Update()
     {
@@ -35,11 +29,13 @@ public class Spider : MonoBehaviour
         objectDirection = Player.position - transform.position;
         fireDirection = Player.position - FireLocation.position;
         float angle = Mathf.Atan2(objectDirection.x, objectDirection.y) * Mathf.Rad2Deg;
-        rb.rotation = RotationOffset.z - angle;
 
-        if (objectDirection.magnitude < MinPlayerDistanceFromSpider && timeSinceLastProjectile > MaxTimeSinceLastProjectile)
+        if (objectDirection.magnitude < MinPlayerDistanceFromSpider)
         {
-            fireProjectile = true;
+            transform.rotation = Quaternion.Euler(0f, 0f, RotationOffset.z - angle);
+
+            if (timeSinceLastProjectile > MaxTimeSinceLastProjectile)
+                fireProjectile = true;
         }
     }
 
@@ -47,7 +43,7 @@ public class Spider : MonoBehaviour
     {
         if (fireProjectile)
         {
-            projectile = Instantiate(Projectile, FireLocation);
+            projectile = Instantiate(Projectile, FireLocation.position, Quaternion.identity);
             var prb = projectile.GetComponent<Rigidbody2D>();
             prb.velocity = Vector2.zero;
             prb.AddForce(fireDirection * ProjectileForce * Time.deltaTime, ForceMode2D.Impulse);
