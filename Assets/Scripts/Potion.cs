@@ -20,10 +20,10 @@ namespace Assets.Scripts
 
         private void Update()
         {
-            var curveTime = (Time.time % myCurve.length);
+            //var curveTime = (Time.time % myCurve.length);
 
-            if (Time.time == 0)
-                curveTime = 0f;
+            //if (Time.time == 0)
+            //    curveTime = 0f;
 
             //transform.position = new Vector3(transform.position.x, myCurve.Evaluate(curveTime) + _OriginalPosition.y, transform.position.z);
         }

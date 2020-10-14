@@ -3,6 +3,7 @@ using Pathfinding;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,6 +18,7 @@ public class StandardEnemy : MonoBehaviour
 
     int _currentHealth;
     Animator _animator;
+    const string DEATH_ANIM_NAME = "Spider_Death";
 
     private void Awake()
     {
@@ -35,25 +37,34 @@ public class StandardEnemy : MonoBehaviour
         _animator.SetTrigger("Hurt");
 
         if (_currentHealth <= 0)
-            Die();
+            StartCoroutine(nameof(Die));
         else
             PlayHurtSound(false);
     }
 
-    private void Die()
+    private IEnumerator Die()
     {
         Debug.Log($"{gameObject.name} died.");
         _animator.SetBool("IsDead", true);
-
-        Instantiate(OnDeathSpawn, transform.position, Quaternion.identity);
-
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
 
         if (OnDieEvent != null)
         {
             OnDieEvent.Invoke();
         }
+
+        transform.parent.GetComponent<Spider>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+
+        var deathAnimationLength = _animator.runtimeAnimatorController.animationClips.FirstOrDefault(a => a.name == DEATH_ANIM_NAME);
+        Invoke("SpawnObjectOnDeath", deathAnimationLength?.length ?? 0f);
+
+        this.enabled = false;
+        yield return new WaitForSeconds(0f);
+    }
+
+    void SpawnObjectOnDeath()
+    {
+        Instantiate(OnDeathSpawn, transform.position, Quaternion.identity);
     }
 
     /// <summary>

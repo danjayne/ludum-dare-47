@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: 8285729356457923197
     second: Spider 3
+  - first:
+      213: -4421955484837205554
+    second: Spider 4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -155,7 +158,7 @@ TextureImporter:
       name: Spider 3
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 0
         width: 32
         height: 32
@@ -168,6 +171,27 @@ TextureImporter:
       bones: []
       spriteID: d7253b433f2dcf270800000000000000
       internalID: 8285729356457923197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider 4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec920b14aee02a2c0800000000000000
+      internalID: -4421955484837205554
       vertices: []
       indices: 
       edges: []

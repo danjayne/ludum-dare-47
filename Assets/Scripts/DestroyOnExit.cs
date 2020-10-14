@@ -8,7 +8,6 @@ public class DestroyOnExit : StateMachineBehaviour
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.gameObject.GetComponent<StandardEnemy>()?.PlayHurtSound(true);
-
         Destroy(animator.gameObject, stateInfo.length);
     }
 }
