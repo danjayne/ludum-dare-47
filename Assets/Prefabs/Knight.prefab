@@ -258,7 +258,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 3.5
   m_Material: {fileID: 6200000, guid: 72185265e8177ae4682dfda1abaeb288, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -286,6 +286,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 5934389025073635672}
   m_CeilingCheck: {fileID: 5934389024704092134}
   m_CrouchDisableCollider: {fileID: 5934389025166143745}
+  _DashMultiplier: 10
   FootstepSoundDelay: 0.6
   OnLandEvent:
     m_PersistentCalls:
@@ -351,6 +352,8 @@ MonoBehaviour:
   EnemyLayers:
     serializedVersion: 2
     m_Bits: 9728
+  AttackCooldownTime: 0.5
+  DashCooldownTime: 0.5
   RunSpeed: 40
   CController: {fileID: 5934389025166143747}
   Animator: {fileID: 5934389025166143756}

@@ -45,15 +45,15 @@ public class StandardEnemy : MonoBehaviour
         Debug.Log($"{gameObject.name} died.");
         _animator.SetBool("IsDead", true);
 
-        if (OnDieEvent != null)
-        {
-            OnDieEvent.Invoke();
-        }
-
         Instantiate(OnDeathSpawn, transform.position, Quaternion.identity);
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+
+        if (OnDieEvent != null)
+        {
+            OnDieEvent.Invoke();
+        }
     }
 
     /// <summary>

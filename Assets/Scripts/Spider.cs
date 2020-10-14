@@ -52,4 +52,9 @@ public class Spider : MonoBehaviour
             fireProjectile = false;
         }
     }
+
+    public void Die()
+    {
+        this.gameObject.SetActive(false);
+    }
 }

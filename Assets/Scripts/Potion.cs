@@ -31,17 +31,26 @@ namespace Assets.Scripts
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!_HasBeenUsed && collision.gameObject.tag.Equals("Player"))
-            {
-                _HasBeenUsed = true;
-                
-                if (DrinkSoundEffect != SoundEffectEnum.None)
-                    AudioManager.Instance.PlaySoundEffect(DrinkSoundEffect, 2f);
-                
-                PlayerHealth.Instance.TakeDamage(-HealthEffector);
+                DrinkPotion();
+        }
 
-                gameObject.SetActive(false);
-                Destroy(gameObject);
-            }
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (!_HasBeenUsed && collision.gameObject.tag.Equals("Player"))
+                DrinkPotion();
+        }
+
+        private void DrinkPotion()
+        {
+            _HasBeenUsed = true;
+
+            if (DrinkSoundEffect != SoundEffectEnum.None)
+                AudioManager.Instance.PlaySoundEffect(DrinkSoundEffect, 2f);
+
+            PlayerHealth.Instance.TakeDamage(-HealthEffector);
+
+            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
