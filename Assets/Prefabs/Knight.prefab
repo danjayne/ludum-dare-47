@@ -282,7 +282,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 20481
+    m_Bits: 4097
   m_GroundCheck: {fileID: 5934389025073635672}
   m_CeilingCheck: {fileID: 5934389024704092134}
   m_CrouchDisableCollider: {fileID: 5934389025166143745}
@@ -351,7 +351,7 @@ MonoBehaviour:
   AttackRange: 0.5
   EnemyLayers:
     serializedVersion: 2
-    m_Bits: 9728
+    m_Bits: 26112
   AttackCooldownTime: 0.5
   DashCooldownTime: 0.5
   RunSpeed: 40
@@ -370,10 +370,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 0}
-  HurtBy:
+  HurtByFireMask:
     serializedVersion: 2
-    m_Bits: 148480
-  HurtByCollisionDamage: 10
+    m_Bits: 262144
+  HurtByFireCollisionDamage: 5
+  EnemyMask:
+    serializedVersion: 2
+    m_Bits: 157184
+  HurtByEnemyCollisionDamage: 10
   MaxHealth: 100
   CurrentHealth: 0
   IsDead: 0

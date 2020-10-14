@@ -158,7 +158,7 @@ public class PlayerInput : MonoBehaviour
 
         foreach (var enemy in hits)
         {
-            enemy.GetComponent<StandardEnemy>().TakeDamage(SlashDamage);
+            enemy.GetComponent<StandardEnemy>()?.TakeDamage(SlashDamage);
         }
     }
 

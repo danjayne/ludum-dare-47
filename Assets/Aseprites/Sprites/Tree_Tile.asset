@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
-  m_Name: Fire
+  m_Name: Tree_Tile
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: -3149654696664515353, guid: 5717d66931aa157458071d257221ac15, type: 3}
-  - {fileID: -6192448817842062976, guid: 5717d66931aa157458071d257221ac15, type: 3}
-  - {fileID: -3965294404054482308, guid: 5717d66931aa157458071d257221ac15, type: 3}
-  m_MinSpeed: 3
-  m_MaxSpeed: 3
+  - {fileID: -3725061320048725750, guid: ac29e19da1c1f4946b62084aa29bce85, type: 3}
+  - {fileID: 6335648235374046737, guid: ac29e19da1c1f4946b62084aa29bce85, type: 3}
+  - {fileID: 2391973592461530984, guid: ac29e19da1c1f4946b62084aa29bce85, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
-  m_TileColliderType: 1
+  m_TileColliderType: 0

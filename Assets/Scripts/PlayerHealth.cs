@@ -31,17 +31,23 @@ public class PlayerHealth : MonoBehaviour
     [Header("UI")]
     public HealthBar HealthBar;
 
-    [Header("Collision")]
-    public LayerMask HurtBy;
-    public int HurtByCollisionDamage = 10;
+    [Header("Collisions: Fire")]
+    public LayerMask HurtByFireMask;
+    public int HurtByFireCollisionDamage = 5;
+    private float _TimeSinceLastHurtByFire;
+    private float _DelayBeforeNextHurtByFire = 2f;
+
+    [Header("Collision: Enemies")]
+    public LayerMask EnemyMask;
+    public int HurtByEnemyCollisionDamage = 10;
+    private float _TimeSinceLastHurtByEnemy;
+    private float _DelayBeforeNextHurtByEnemy = .5f;
 
     [Header("Health")]
     public int MaxHealth = 100;
     public int CurrentHealth = 0;
     public bool IsDead;
 
-    private float _TimeSinceLastHurt;
-    private float _DelayBeforeNextHurt = 0f;
     private Animator _Animator;
 
     private void Start()
@@ -53,28 +59,47 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        
-
-        _TimeSinceLastHurt += Time.deltaTime;
+        _TimeSinceLastHurtByEnemy += Time.deltaTime;
+        _TimeSinceLastHurtByFire += Time.deltaTime;
     }
 
     private void OnCollisionStay2D(Collision2D c)
     {
-        
+        CheckIfHurtByFire(c.gameObject.layer);
+        CheckIfHurtByEnemy(c.gameObject.layer);
+    }
 
-        if (CollidedWithObjectPlayerIsHurtBy(c) && _TimeSinceLastHurt >= _DelayBeforeNextHurt)
+    private void CheckIfHurtByEnemy(int layer)
+    {
+        if (CollidedWithLayer(layer, EnemyMask) && _TimeSinceLastHurtByEnemy >= _DelayBeforeNextHurtByEnemy)
         {
             // We've entered the fire/spike etc
             AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.ArthurHurtByFire, 0.8f);
-            TakeDamage(HurtByCollisionDamage);
-            _TimeSinceLastHurt = 0f;
+            TakeDamage(HurtByEnemyCollisionDamage);
+            _TimeSinceLastHurtByEnemy = 0f;
         }
     }
 
-    private bool CollidedWithObjectPlayerIsHurtBy(Collision2D c)
+    void CheckIfHurtByFire(int hurtByLayer)
+    {
+        if (CollidedWithLayer(hurtByLayer, HurtByFireMask) && _TimeSinceLastHurtByFire >= _DelayBeforeNextHurtByFire)
+        {
+            // We've entered the fire/spike etc
+            AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.ArthurHurtByFire, 0.8f);
+            TakeDamage(HurtByFireCollisionDamage);
+            _TimeSinceLastHurtByFire = 0f;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D c)
+    {
+        CheckIfHurtByFire(c.gameObject.layer);
+    }
+
+    private bool CollidedWithLayer(int layer, LayerMask mask)
     {
         //https://answers.unity.com/questions/454494/how-do-i-use-layermask-to-check-collision.html
-        return (HurtBy.value & 1 << c.gameObject.layer) == 1 << c.gameObject.layer;
+        return (mask.value & 1 << layer) == 1 << layer;
     }
 
     public void TakeDamage(int damage)
