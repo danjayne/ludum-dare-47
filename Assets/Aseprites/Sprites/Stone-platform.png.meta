@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: 6336765690154131701
     second: Stone-platform 0
+  - first:
+      213: -3735828256503214475
+    second: Stone-platform_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -80,22 +83,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stone-platform 0
+      name: Stone-platform_0
       rect:
         serializedVersion: 2
         x: 0
         y: 2
         width: 32
         height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5f0258252d6b0f750800000000000000
-      internalID: 6336765690154131701
+      spriteID: 57e42457efba72cc0800000000000000
+      internalID: -3735828256503214475
       vertices: []
       indices: 
       edges: []
