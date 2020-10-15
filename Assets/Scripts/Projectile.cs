@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    //public GameObject hitEffect;
+    public float KillAfter = 10f;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Awake()
     {
-        //Instantiate(hitEffect, transform.position, Quaternion.identity);
-        //Destroy(hitEffect, 5f);
-        Destroy(gameObject, 0.01f);
+        Destroy(gameObject, KillAfter);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //TODO: hitEffect
         if (collision.gameObject.tag == "Player")
             Destroy(gameObject, 0.01f);
     }
