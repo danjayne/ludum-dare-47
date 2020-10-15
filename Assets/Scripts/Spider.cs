@@ -46,7 +46,7 @@ public class Spider : MonoBehaviour
             projectile = Instantiate(Projectile, FireLocation.position, Quaternion.identity);
             var prb = projectile.GetComponent<Rigidbody2D>();
             prb.velocity = Vector2.zero;
-            prb.AddForce(fireDirection * ProjectileForce * Time.deltaTime, ForceMode2D.Impulse);
+            prb.AddForce(fireDirection.normalized * ProjectileForce * Time.deltaTime, ForceMode2D.Impulse);
 
             timeSinceLastProjectile = 0f;
             fireProjectile = false;

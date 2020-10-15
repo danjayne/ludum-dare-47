@@ -48,7 +48,7 @@ MonoBehaviour:
   RotationOffset: {x: 0, y: 0, z: -120}
   FireLocation: {fileID: 269139858440906591}
   Projectile: {fileID: 6418554101688109527, guid: edc088a5b4bf04f4d8c54f3988968641, type: 3}
-  ProjectileForce: 100
+  ProjectileForce: 300
   MinPlayerDistanceFromSpider: 6
   MaxTimeSinceLastProjectile: 2
 --- !u!1001 &269139858409786817

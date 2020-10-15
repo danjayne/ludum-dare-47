@@ -27,6 +27,11 @@ public class CharacterController2D : MonoBehaviour
     public float FootstepSoundDelay = .6f;
     float timeSinceLastFootstep;
 
+    [Header("Max Velocity")]
+    public float MaxVelocity;
+    [SerializeField] private float _sqrMaxVelocity;
+    
+
     [Header("Events")]
     [Space]
 
@@ -44,6 +49,8 @@ public class CharacterController2D : MonoBehaviour
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         m_Rigidbody2D.sleepMode = RigidbodySleepMode2D.NeverSleep; /* Allows trigger stays to be calculated accurately. */
+
+        _sqrMaxVelocity = MaxVelocity * MaxVelocity;
 
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
@@ -65,7 +72,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        ClampVelocity();
 
         m_TimeSinceJump += Time.deltaTime;
 
@@ -96,6 +103,19 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
+    private void ClampVelocity()
+    {
+        var v = m_Rigidbody2D.velocity;
+        // Clamp the velocity, if necessary
+        // Use sqrMagnitude instead of magnitude for performance reasons.
+        if (v.sqrMagnitude > _sqrMaxVelocity)
+        { // Equivalent to: rigidbody.velocity.magnitude > maxVelocity, but faster.
+          // Vector3.normalized returns this vector with a magnitude 
+          // of 1. This ensures that we're not messing with the 
+          // direction of the vector, only its magnitude.
+            m_Rigidbody2D.velocity = v.normalized * MaxVelocity;
+        }
+    }
 
     public void Move(float move, bool crouch, bool jump, bool dash)
     {

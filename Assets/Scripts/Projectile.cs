@@ -12,4 +12,10 @@ public class Projectile : MonoBehaviour
         //Destroy(hitEffect, 5f);
         Destroy(gameObject, 0.01f);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+            Destroy(gameObject, 0.01f);
+    }
 }

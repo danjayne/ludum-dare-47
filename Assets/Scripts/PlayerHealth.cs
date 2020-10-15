@@ -46,8 +46,9 @@ public class PlayerHealth : MonoBehaviour
     [Header("Health")]
     public int MaxHealth = 100;
     public int CurrentHealth = 0;
-    public bool IsDead;
+    public bool IsDead => CurrentHealth <= 0;
 
+    [Header("Animation")]
     private Animator _Animator;
 
     private void Start()
@@ -59,12 +60,16 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
+        if (IsDead) return;
+
         _TimeSinceLastHurtByEnemy += Time.deltaTime;
         _TimeSinceLastHurtByFire += Time.deltaTime;
     }
 
     private void OnCollisionStay2D(Collision2D c)
     {
+        if (IsDead) return;
+
         CheckIfHurtByFire(c.gameObject.layer);
         CheckIfHurtByEnemy(c.gameObject.layer);
     }
@@ -93,7 +98,10 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D c)
     {
+        if (IsDead) return;
+
         CheckIfHurtByFire(c.gameObject.layer);
+        CheckIfHurtByEnemy(c.gameObject.layer);
     }
 
     private bool CollidedWithLayer(int layer, LayerMask mask)
@@ -106,34 +114,31 @@ public class PlayerHealth : MonoBehaviour
     {
         CurrentHealth -= damage;
 
-        _Animator.SetTrigger("Hurt");
-
-        if (CurrentHealth <= 0)
+        if (IsDead)
         {
             Die(); // or game over
         }
         else
         {
+            _Animator.SetTrigger("Hurt");
             HealthBar.SetHealth(CurrentHealth);
         }
     }
 
     private void Die()
     {
-        IsDead = true;
-        //gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        //gameObject.GetComponent<CircleCollider2D>().enabled = false;
-        gameObject.GetComponent<CharacterController2D>().enabled = false;
-        gameObject.GetComponent<PlayerInput>().enabled = false;
-        gameObject.GetComponent<Rigidbody2D>().velocity= Vector2.zero;
-
+        _Animator.SetTrigger("Death");
         HealthBar.SetHealth(0);
+
+        gameObject.GetComponent<CharacterController2D>().enabled = false;
+        gameObject.GetComponent<PlayerInput>().OnLanding();
+        gameObject.GetComponent<PlayerInput>().enabled = false;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
         CameraManager.Instance.PlayDeathCameraScene();
         AudioManager.Instance.PlayMusic(MusicEnum.WitchMusic);
         AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.ArthurHurt, 3f);
-        _Animator.SetBool("IsDead", true);
 
-        //Destroy(gameObject.GetComponent<Rigidbody2D>());
         Invoke("Restart", 10f);
     }
 
