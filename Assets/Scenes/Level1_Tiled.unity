@@ -551,7 +551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.9996433, y: -1.2399781, z: -10}
+  m_LocalPosition: {x: -3.9996643, y: -1.2399781, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1184927348}
@@ -3248,7 +3248,7 @@ Tilemap:
       - {fileID: 1850302457006234770, guid: fab5d2b7750f1e94480d99b4178f6eaa, type: 3}
       - {fileID: -4875181619092061632, guid: fab5d2b7750f1e94480d99b4178f6eaa, type: 3}
       - {fileID: -6331083164625653868, guid: fab5d2b7750f1e94480d99b4178f6eaa, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 13, y: -2, z: 0}
@@ -5359,6 +5359,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1149414657, guid: 7e4709bb42180784eb193b0208c9d29b, type: 3}
+      propertyPath: RunSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1290067147, guid: 7e4709bb42180784eb193b0208c9d29b, type: 3}
       propertyPath: HealthBar
       value: 
@@ -5373,11 +5377,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5934389025166143747, guid: 7e4709bb42180784eb193b0208c9d29b, type: 3}
       propertyPath: m_JumpForce
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5934389025166143747, guid: 7e4709bb42180784eb193b0208c9d29b, type: 3}
       propertyPath: m_AirControl
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934389025166143747, guid: 7e4709bb42180784eb193b0208c9d29b, type: 3}
+      propertyPath: m_MovementSmoothing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5934389025166143748, guid: 7e4709bb42180784eb193b0208c9d29b, type: 3}
       propertyPath: m_Name

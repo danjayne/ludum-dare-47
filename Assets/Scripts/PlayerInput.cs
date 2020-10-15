@@ -42,6 +42,8 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.GameIsPaused) return;
+
         if (TimeUntilNextAttack > 0)
             TimeUntilNextAttack -= Time.deltaTime;
 
@@ -61,7 +63,7 @@ public class PlayerInput : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+        if (PauseMenu.GameIsPaused) return;
 
         // Move our character
         CController.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump, dash);

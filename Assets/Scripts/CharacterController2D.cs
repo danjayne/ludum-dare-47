@@ -39,7 +39,7 @@ public class CharacterController2D : MonoBehaviour
     public float MaxVelocity;
     private Vector3 m_Velocity = Vector3.zero;
     [SerializeField] private float _sqrMaxVelocity;
-    
+
     [Header("Events")]
     [Space]
 
@@ -189,12 +189,8 @@ public class CharacterController2D : MonoBehaviour
             m_TimeSinceJump = 0f;
             AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.Jump);
 
-            if (_jumpCount < MaxJumpCount)
-            {
-                m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0f);
-            }
-
-            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0f);
+            m_Rigidbody2D.AddForce(new Vector2(0f, _jumpCount == MaxJumpCount ?  m_JumpForce : m_JumpForce * .7f));
             _jumpCount--;
         }
 

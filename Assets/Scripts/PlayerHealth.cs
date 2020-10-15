@@ -60,7 +60,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if (IsDead) return;
+        if (IsDead || PauseMenu.GameIsPaused) return;
 
         _TimeSinceLastHurtByEnemy += Time.deltaTime;
         _TimeSinceLastHurtByFire += Time.deltaTime;
@@ -68,7 +68,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D c)
     {
-        if (IsDead) return;
+        if (IsDead || PauseMenu.GameIsPaused) return;
 
         CheckIfHurtByFire(c.gameObject.layer);
         CheckIfHurtByEnemy(c.gameObject.layer);
