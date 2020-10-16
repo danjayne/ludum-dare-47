@@ -27,8 +27,8 @@ public class CharacterController2D : MonoBehaviour
     [Header("Movement")]
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
-    public float FootstepSoundDelay = .6f;
-    float timeSinceLastFootstep;
+    //public float FootstepSoundDelay = .6f;
+    //float timeSinceLastFootstep;
 
     [Header("Dash")]
     public float _DashMultiplier = 5f;
@@ -95,13 +95,18 @@ public class CharacterController2D : MonoBehaviour
             }
         }
 
-        timeSinceLastFootstep += Time.deltaTime;
+        //timeSinceLastFootstep += Time.deltaTime;
 
-        if (Math.Abs(m_Rigidbody2D.velocity.x) > 0.01 && m_Grounded && timeSinceLastFootstep > FootstepSoundDelay)
-        {
-            AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.Footsteps, 2f);
-            timeSinceLastFootstep = 0f;
-        }
+        //if (Math.Abs(m_Rigidbody2D.velocity.x) > 0.01 && m_Grounded && timeSinceLastFootstep > FootstepSoundDelay)
+        //{
+        //    AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.Footsteps, 2f);
+        //    timeSinceLastFootstep = 0f;
+        //}
+    }
+
+    public void Footstep()
+    {
+        AudioManager.Instance.PlaySoundEffect(SoundEffectEnum.Footsteps, 2f);
     }
 
     private void ClampVelocity()
