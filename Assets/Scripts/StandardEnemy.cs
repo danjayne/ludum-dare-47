@@ -11,6 +11,8 @@ public class StandardEnemy : MonoBehaviour
 {
     [Header("Health")]
     public int MaxHealth = 100;
+    private EnemyHealthBarFollow HealthBarFollow;
+    private HealthBar HealthBar;
     int _currentHealth;
 
     [Header("Death")]
@@ -21,11 +23,6 @@ public class StandardEnemy : MonoBehaviour
     Animator _animator;
     const string DEATH_ANIM_NAME = "Spider_Death";
 
-    [Header("Health Bar")]
-    public GameObject HealthBar;
-    public Vector2 HealthBarOffset;
-    private GameObject _healthBarInstance;
-
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -33,14 +30,25 @@ public class StandardEnemy : MonoBehaviour
 
     private void Start()
     {
+        SetupHealthBar();
+
         _currentHealth = MaxHealth;
-        if (HealthBar != null)
-            _healthBarInstance = Instantiate(HealthBar, new Vector2(transform.position.x + HealthBarOffset.x, transform.position.y + HealthBarOffset.y), Quaternion.identity);
+        HealthBar.SetMaxHealth(_currentHealth);
+    }
+
+    private void SetupHealthBar()
+    {
+        var hbf = transform.parent.GetComponent<EnemyHealthBarFollow>();
+        if (hbf == null) hbf = GetComponent<EnemyHealthBarFollow>();
+
+        HealthBarFollow = hbf;
+        HealthBar = hbf?.HealthBar;
     }
 
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
+        HealthBar.SetHealth(_currentHealth);
 
         _animator.SetTrigger("Hurt");
 
@@ -64,7 +72,7 @@ public class StandardEnemy : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
 
         var deathAnimationLength = _animator.runtimeAnimatorController.animationClips.FirstOrDefault(a => a.name == DEATH_ANIM_NAME);
-        Invoke("SpawnObjectOnDeath", deathAnimationLength?.length ?? 0f);
+        Invoke(nameof(SpawnObjectOnDeath), deathAnimationLength?.length ?? 0f);
 
         this.enabled = false;
         yield return new WaitForSeconds(0f);
@@ -72,6 +80,7 @@ public class StandardEnemy : MonoBehaviour
 
     void SpawnObjectOnDeath()
     {
+        Destroy(HealthBarFollow.HealthBarCanvasInstance.gameObject);
         Instantiate(OnDeathSpawn, transform.position, Quaternion.identity);
     }
 

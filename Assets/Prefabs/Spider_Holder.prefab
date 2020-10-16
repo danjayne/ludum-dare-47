@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 269139857786424804}
   - component: {fileID: 644848368}
+  - component: {fileID: 2073943241}
   m_Layer: 0
   m_Name: Spider_Holder
   m_TagString: Untagged
@@ -39,7 +40,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269139857786424805}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23e539dc541803e4dae68cc4b777dd74, type: 3}
   m_Name: 
@@ -51,6 +52,22 @@ MonoBehaviour:
   ProjectileForce: 300
   MinPlayerDistanceFromSpider: 6
   MaxTimeSinceLastProjectile: 2
+--- !u!114 &2073943241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269139857786424805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6e7eff0ecb07b4f918a65d8542b0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthBarCanvasPrefab: {fileID: 8550480973335408907, guid: fa238cb4c24eecf4086a4786788acb90, type: 3}
+  HealthBarOffset: {x: -0.1, y: 0.7}
+  HealthBarCanvasInstance: {fileID: 0}
+  HealthBar: {fileID: 0}
 --- !u!1001 &269139858409786817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7513868492474492656, guid: 6907531f02d7a8f4ab31e15f5ce31f57, type: 3}
       propertyPath: OnDieEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7513868492474492656, guid: 6907531f02d7a8f4ab31e15f5ce31f57, type: 3}
       propertyPath: OnDieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -178,6 +195,10 @@ PrefabInstance:
       propertyPath: HealthBarOffset.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9082780474872588872, guid: 6907531f02d7a8f4ab31e15f5ce31f57, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 72185265e8177ae4682dfda1abaeb288, type: 2}
     m_RemovedComponents:
     - {fileID: 2464187841167839025, guid: 6907531f02d7a8f4ab31e15f5ce31f57, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6907531f02d7a8f4ab31e15f5ce31f57, type: 3}

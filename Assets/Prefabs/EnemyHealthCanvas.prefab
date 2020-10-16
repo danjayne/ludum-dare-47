@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8550480973335408907}
   - component: {fileID: 8550480973335408904}
   - component: {fileID: 8550480973335408905}
-  - component: {fileID: 8550480973335408902}
   - component: {fileID: 8550480973335408903}
   m_Layer: 5
   m_Name: EnemyHealthCanvas
@@ -101,19 +100,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8550480973335408902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8550480973335408900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ed9c444897e63c4899af7fc2069cac5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 0}
 --- !u!225 &8550480973335408903
 CanvasGroup:
   m_ObjectHideFlags: 0
