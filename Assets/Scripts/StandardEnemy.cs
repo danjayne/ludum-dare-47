@@ -11,14 +11,20 @@ public class StandardEnemy : MonoBehaviour
 {
     [Header("Health")]
     public int MaxHealth = 100;
+    int _currentHealth;
 
     [Header("Death")]
     public Transform OnDeathSpawn;
     public UnityEvent OnDieEvent;
 
-    int _currentHealth;
+    [Header("Animation")]
     Animator _animator;
     const string DEATH_ANIM_NAME = "Spider_Death";
+
+    [Header("Health Bar")]
+    public GameObject HealthBar;
+    public Vector2 HealthBarOffset;
+    private GameObject _healthBarInstance;
 
     private void Awake()
     {
@@ -28,6 +34,8 @@ public class StandardEnemy : MonoBehaviour
     private void Start()
     {
         _currentHealth = MaxHealth;
+        if (HealthBar != null)
+            _healthBarInstance = Instantiate(HealthBar, new Vector2(transform.position.x + HealthBarOffset.x, transform.position.y + HealthBarOffset.y), Quaternion.identity);
     }
 
     public void TakeDamage(int damage)

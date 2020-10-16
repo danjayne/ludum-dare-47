@@ -166,6 +166,18 @@ PrefabInstance:
       propertyPath: OnDieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7513868492474492656, guid: 6907531f02d7a8f4ab31e15f5ce31f57, type: 3}
+      propertyPath: HealthBar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513868492474492656, guid: 6907531f02d7a8f4ab31e15f5ce31f57, type: 3}
+      propertyPath: HealthBarOffset.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513868492474492656, guid: 6907531f02d7a8f4ab31e15f5ce31f57, type: 3}
+      propertyPath: HealthBarOffset.y
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2464187841167839025, guid: 6907531f02d7a8f4ab31e15f5ce31f57, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6907531f02d7a8f4ab31e15f5ce31f57, type: 3}

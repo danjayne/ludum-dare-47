@@ -59,8 +59,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5511731125152835837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.23, y: -3.1, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5652358117921655288}
   m_Father: {fileID: 0}
@@ -166,6 +166,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 200
   OnDeathSpawn: {fileID: 7351255264613504484, guid: 94f27aa7f559e1d43993ef9e14b99b95, type: 3}
+  OnDieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  HealthBar: {fileID: 0}
+  HealthBarOffset: {x: 0, y: 0}
 --- !u!114 &2290697196205227347
 MonoBehaviour:
   m_ObjectHideFlags: 0
